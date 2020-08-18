@@ -1,0 +1,64 @@
+import React, { Component } from 'react';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink, NavbarText, NavbarToggler, Collapse, Jumbotron } from 'reactstrap';
+
+class Header extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            isNavOpen: false
+        };
+        this.toggleNav = this.toggleNav.bind(this);
+    }
+
+    toggleNav() {
+        this.setState({
+            isNavOpen: !this.state.isNavOpen
+        });
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <Navbar dark light expand="md">
+                    <div className="container">
+                        <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarBrand href="/">
+                            <img src="accept2.png" height="30" width="50" alt="acceptlogo" />
+                        </NavbarBrand>
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                            <Nav className="mr-auto" navbar>
+                            <NavItem>
+                                <NavLink className="nav-link" to="#">
+                                    <span className="fa fa-home fa-lg"></span> Server
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to="#">
+                                    <span className="fa fa-info fa-lg"></span> Github
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink className="nav-link" to="#">
+                                    <span className="fa fa-address-card fa-lg"></span> Official Site
+                                </NavLink>
+                            </NavItem>
+                            </Nav>
+                            <NavbarText className="accept">ACCEPT ACCEPT</NavbarText>
+                        </Collapse>
+                    </div>
+                </Navbar>
+                <Jumbotron className="banner">
+                    <div className="container">
+                        <div className="row row-header">
+                            <div className="col-12 col-sm-6">
+                                <h1>accept accept !</h1>
+                                <p>csgo server 10 man scrim lobby setup</p>
+                            </div>
+                        </div>
+                    </div>
+                </Jumbotron>
+            </React.Fragment>
+        );
+    }
+}
+export default Header;
