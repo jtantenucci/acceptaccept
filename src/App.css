@@ -1,3 +1,5 @@
+/* styles for main app */
+
 :root{
   --primary: #545161;
   --secondary: #f8cbdc;
@@ -8,14 +10,22 @@ body {
   background-color: #ad9cad;
 }
 
-div.col-12.col-sm-6 {
-  padding-left: 0px;
-  padding-right: 70px;
+
+/* styles for header/navbar */
+
+.navbar-dark {
+  background-color: var(--primary);
 }
 
 li.nav-item {
   color: var(--tertiary);
 }
+
+div.col-12.col-sm-6 {
+  padding-left: 0px;
+  padding-right: 70px;
+}
+
 .row-header {
   margin: 0px auto;
   padding-bottom: 0px auto;
@@ -28,14 +38,60 @@ li.nav-item {
   min-height: 400px;
 }
 
-.footer {
-  background-color: var(--primary);
-  color: var(--tertiary);
+.navbar-dark .navbar-nav .nav-link {
   font-family: Helvetica;
-  font-weight: normal;
-  margin-top: 100px;
-  padding: 20px 0px 20px 0px;
-  text-shadow: 0.5px 0.5px 2px lightgrey;
+  font-style: italic;
+  color: var(--tertiary);
+}
+
+
+/* styles for header/jumbotron */
+
+.containerhead {
+  letter-spacing: 1.5px;
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.containertext {
+  text-align: right;
+  font-family: Helvetica;
+  font-style: italic;
+  letter-spacing: 1.5px;
+}
+
+.jumbotron {
+  text-align: justify;
+  padding: 10px 0px 200px 0px;
+  margin: 0px auto;
+  background: var(--secondary);
+  color: floralwhite;
+  text-shadow: 0.5px 0.5px 5px rgb(245, 142, 221);
+}
+
+.banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 32%;
+  background-image: url(https://media.discordapp.net/attachments/737753359611854887/745443180811386944/mob.png?width=1075&height=605);
+}
+
+hr{
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--primary), var(--tertiary), var(--primary));
+}
+
+
+/* styles for login modal */
+
+div.modal-header {
+  background: var(--primary);
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: bolder;
+  color: white;
 }
 
 h5.modal-title {
@@ -47,69 +103,17 @@ h5.modal-title {
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
 
-.footerh5 {
-  letter-spacing: 1.5px;
-  font-family: Helvetica;
-  font-style: italic;
-  font-weight: lighter;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  font-family: Helvetica;
-  font-style: italic;
-  color: var(--tertiary);
-}
-
-span.accept.navbar-text {
-  text-align: right;
-}
-
-table.table.table-hover {
-  margin-bottom: 0px;
-}
-
-th.head {
-  border-top: 0px;
-}
-
-.table thead th{
-  border-bottom: 1px solid var(--tertiary);
-}
-
-.head {
-  color: var(--tertiary);
-  font-size: 25px;
-  font-weight: 500;
-  text-align: center;
-  font-family: Helvetica;
-  font-style: italic;
-  text-shadow: 0.5px 0.5px 3px lightgrey;
-}
-
-th.user {
-  margin: 0px auto;
-  padding: 30px 0px 30px 0px;
-  border-right: 1px solid var(--tertiary);
-  border-left: 1px solid var(--tertiary);
-  border-bottom: 1px solid var(--tertiary);
-}
-
-hr{
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, var(--primary), var(--tertiary), var(--primary));
-}
-
-div.modal-header {
-  background: var(--primary);
-  font-family: Helvetica;
-  font-style: italic;
-  font-weight: bolder;
+div.modal-body {
+  background-color: #ad9cad;
   color: white;
 }
 
 div.modal-footer {
   background: var(--primary);
+}
+
+span.accept.navbar-text {
+  text-align: right;
 }
 
 button.close {
@@ -142,38 +146,55 @@ button.btn.btn-primary:hover {
   color: white;
 }
 
-.containerhead {
-  letter-spacing: 1.5px;
-  font-family: Helvetica;
-  font-style: italic;
-  font-weight: bold;
+
+/* styles for table */
+
+th.head {
+  border-top: 0px;
 }
 
-.containertext {
-  text-align: right;
-  font-family: Helvetica;
-  font-style: italic;
-  letter-spacing: 1.5px;
+.table thead th{
+  border-bottom: 1px solid var(--tertiary);
 }
 
-.jumbotron {
-  text-align: justify;
-  padding: 10px 0px 200px 0px;
+.head {
+  color: var(--tertiary);
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  font-family: Helvetica;
+  font-style: italic;
+  text-shadow: 0.5px 0.5px 3px lightgrey;
+}
+
+th.user {
   margin: 0px auto;
-  background: var(--secondary);
-  color: floralwhite;
-  text-shadow: 0.5px 0.5px 5px rgb(245, 142, 221);
+  padding: 30px 0px 30px 0px;
+  border-right: 1px solid var(--tertiary);
+  border-left: 1px solid var(--tertiary);
+  border-bottom: 1px solid var(--tertiary);
 }
 
-.banner {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: 32%;
-  background-image: url(https://media.discordapp.net/attachments/737753359611854887/745443180811386944/mob.png?width=1075&height=605);
+table.table.table-hover {
+  margin-bottom: 0px;
 }
 
-.navbar-dark {
-  background-color: var(--primary);
+
+/* styles for main form */
+
+label {
+  color: var(--tertiary);
+  font-size: 25px;
+  font-weight: 100;
+  font-family: Helvetica;
+  font-style: italic;
+  text-shadow: 0.5px 0.5px 3px lightgrey;
+}
+
+div.col.shuffle {
+  padding: 10px 10px 0px 10px;
+  text-align: right;
+  vertical-align: auto;
 }
 
 button.btn.btn-shuffle.btn-secondary {
@@ -195,22 +216,27 @@ button.btn.btn-launch.btn-secondary {
   border: 0px;
 }
 
-
 button.btn.btn-launch.btn-secondary:hover {
   background: #75717c;
   color: white;
 }
 
-label {
+
+/* styles for footer */
+
+.footer {
+  background-color: var(--primary);
   color: var(--tertiary);
-  font-size: 25px;
-  font-weight: 100;
+  font-family: Helvetica;
+  font-weight: normal;
+  margin-top: 100px;
+  padding: 20px 0px 20px 0px;
+  text-shadow: 0.5px 0.5px 2px lightgrey;
+}
+
+.footerh5 {
+  letter-spacing: 1.5px;
   font-family: Helvetica;
   font-style: italic;
-  text-shadow: 0.5px 0.5px 3px lightgrey;
-}
-div.col.shuffle {
-  padding: 10px 10px 0px 10px;
-  text-align: right;
-  vertical-align: auto;
+  font-weight: lighter;
 }
