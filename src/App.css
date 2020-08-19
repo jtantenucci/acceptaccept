@@ -1,6 +1,21 @@
+:root{
+  --primary: #545161;
+  --secondary: #f8cbdc;
+  --tertiary: #ffffff;
+}
+
+body {
+  background-color: #ad9cad;
+}
+
+div.col-12.col-sm-6 {
+  padding-left: 0px;
+  padding-right: 70px;
+}
+
 .row-header {
   margin: 0px auto;
-  padding: 0px auto;
+  padding-bottom: 0px auto;
 }
 
 .row-content {
@@ -11,8 +26,11 @@
 }
 
 .footer {
-  background-color: #d1c4e9;
-  margin: 0px auto;
+  background-color: var(--primary);
+  color: var(--tertiary);
+  font-family: Helvetica;
+  font-weight: normal;
+  margin-top: 100px;
   padding: 20px 0px 20px 0px;
 }
 
@@ -20,23 +38,95 @@ span.accept.navbar-text {
   text-align: right;
 }
 
-h1 {
+th.head {
+  border-top: 0px;
+}
+
+.table thead th{
+  border-bottom: 1px solid var(--tertiary);
+}
+
+.head {
+  color: var(--tertiary);
+  letter-spacing: 2px;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  font-family: Helvetica;
+  font-style: italic;
+  text-shadow: 0.5px 0.5px 3px lightgrey;
+}
+
+th.user {
+  margin: 0px auto;
+  padding: 30px 0px 30px 0px;
+  border-right: 1px solid var(--tertiary);
+  border-left: 1px solid var(--tertiary);
+  border-bottom: 1px solid var(--tertiary);
+}
+
+hr{
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--primary), var(--tertiary), var(--primary));
+}
+
+div.modal-header {
+  background: var(--primary);
+  font-family: Helvetica;
+  font-style: italic;
+  font-weight: bolder;
+  color: white;
+}
+
+div.modal-footer {
+  background: var(--primary);
+}
+
+button.btn.btn-primary {
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
+  height: 30px;
+  width: 70px;
+  background: #89859c;
+  border: 0px;
+}
+
+button.btn.btn-primary:hover {
+  background: #75717c;
+  color: white;
+}
+
+.containerhead {
+  letter-spacing: 1.5px;
   font-family: Helvetica;
   font-style: italic;
   font-weight: bold;
 }
 
-p {
+.containertext {
+  text-align: right;
+  font-family: Helvetica;
   font-style: italic;
+  letter-spacing: 1.5px;
 }
 
 .jumbotron {
-  padding: 50px 30px 50px 30px;
+  text-align: justify;
+  padding: 10px 0px 200px 0px;
   margin: 0px auto;
-  background: #f8cbdc;
+  background: var(--secondary);
   color: floralwhite;
 }
 
+.banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 32%;
+  background-image: url(https://media.discordapp.net/attachments/737753359611854887/745443180811386944/mob.png?width=1075&height=605);
+}
+
 .navbar-dark {
-  background-color: #ddaecd;
+  background-color: var(--primary);
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, NavbarText, NavbarToggler, Collapse, Jumbotron } from 'reactstrap';
+import LoginModal from './loginform';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink, NavbarToggler, Collapse, Jumbotron } from 'reactstrap';
 
 class Header extends Component {
     constructor (props) {
@@ -43,7 +44,13 @@ class Header extends Component {
                                 </NavLink>
                             </NavItem>
                             </Nav>
-                            <NavbarText className="accept">ACCEPT ACCEPT</NavbarText>
+                            <Nav className="accept">
+                                <NavItem>
+                                    <NavLink>
+                                        <LoginModal />
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
                         </Collapse>
                     </div>
                 </Navbar>
@@ -51,8 +58,9 @@ class Header extends Component {
                     <div className="container">
                         <div className="row row-header">
                             <div className="col-12 col-sm-6">
-                                <h1>accept accept !</h1>
-                                <p>csgo server 10 man scrim lobby setup</p>
+                                <h1 className="containerhead">accept accept !</h1>
+                                    <hr className="mt-0 mb-2"></hr>
+                                <p className="containertext">csgo server 10 man scrim lobby setup</p>
                             </div>
                         </div>
                     </div>

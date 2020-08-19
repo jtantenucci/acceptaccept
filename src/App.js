@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './comp/headercomp';
+import Footer from './comp/footercomp';
+import MatchLobby from './comp/matchlobby';
 import './App.css';
 
 class App extends Component {
@@ -8,6 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <MatchLobby />
+        <Footer />
       </div>
     );
   }
