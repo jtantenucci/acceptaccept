@@ -8,22 +8,23 @@ function Footer() {
                 <div className="row">
                     <div className="col-4">
                         <div className="text-left">
-                        <h5>links</h5>
+                        <h5 className="footerh5">links</h5>
                         <ul className="list-unstyled">
                             <li>Home</li>
-                            <li>About</li>
-                            <li>Contact</li>
+                            <li>GitHub</li>
+                            <li>Stats</li>
+                            <li>Site</li>
                         </ul>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="text-center">
-                            <h5>please always pick de_dust2</h5>
+                            <h5 className="footerh5">please always pick de_dust2</h5>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="text-right">
-                            <h5>q?</h5>
+                            <h5 className="footerh5">q?</h5>
                             <ul className="list-unstyled">
                                 <li><a className="btn btn-social-icon btn-twitter" 
                                     href="http://twitter.com/"><i className="fa fa-twitter"></i></a></li>

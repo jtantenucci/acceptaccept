@@ -30,17 +30,17 @@ class Header extends Component {
                             <Nav className="mr-auto" navbar>
                             <NavItem>
                                 <NavLink className="nav-link" to="#">
-                                    <span className="fa fa-home fa-lg"></span> Server
+                                    <span className="fa fa-server fa-lg"></span> Server
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link" to="#">
-                                    <span className="fa fa-info fa-lg"></span> Github
+                                    <span className="fa fa-bar-chart fa-lg"></span> Match Stats
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className="nav-link" to="#">
-                                    <span className="fa fa-address-card fa-lg"></span> Official Site
+                                    <span className="fa fa-globe fa-lg"></span> Official Site
                                 </NavLink>
                             </NavItem>
                             </Nav>
