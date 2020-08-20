@@ -7,7 +7,6 @@ const LoginModal = (props) => {
     } = props;
     
     const [modal, setModal] = useState(false);
-
     const toggle = () => setModal(!modal);
 
     return(
@@ -27,4 +26,4 @@ const LoginModal = (props) => {
     );
 }
 
-export default LoginModal
+export default LoginModal;
