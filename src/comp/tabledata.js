@@ -13,79 +13,26 @@ const TableData = () => {
             </thead>                
             <tbody>
                 <tr>
-                  <PlayerSlot gameid="0" team="teamA" slotNo="0" />
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
+                  <PlayerSlot gameid="0" team="teamA" slotNo="0"/>
+                  <PlayerSlot gameid="0" team="teamB" slotNo="0"/>
                 </tr>
                 <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
+                  <PlayerSlot gameid="0" team="teamA" slotNo="1"/>
+                  <PlayerSlot gameid="0" team="teamB" slotNo="1"/>
                 </tr>
                 <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>                        
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
+                  <PlayerSlot gameid="0" team="teamA" slotNo="2"/>
+                  <PlayerSlot gameid="0" team="teamB" slotNo="2"/>
                 </tr>
                 <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
+                  <PlayerSlot gameid="0" team="teamA" slotNo="3"/>
+                  <PlayerSlot gameid="0" team="teamB" slotNo="3"/>
                 </tr>
                 <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>                        
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-group fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
+                  <PlayerSlot gameid="0" team="teamA" slotNo="4"/>
+                  <PlayerSlot gameid="0" team="teamB" slotNo="4"/>
                 </tr>
+
             </tbody>
         </Table>
     )
