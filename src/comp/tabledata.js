@@ -25,99 +25,13 @@ export class TableData extends React.Component {
     return (
         <Table hover>
             <thead>
-<<<<<<< HEAD
                 <tr>
-                    <th className="head"><i className="fa fa-group fa-md"></i> team 1</th>
-                    <th className="head"><i className="fa fa-group fa-md"></i> team 2</th>
-=======
-              <tr>
-                    <th className="head">team 1</th>
-                    <th className="head">team 2</th>
->>>>>>> 8ef2e5c4b5af255953a6e64c2dbd361cd762d92c
+                  <th className="head">team 1</th>
+                  <th className="head">team 2</th>
                 </tr>
             </thead>                
           <tbody onClick={this.update}>
                 <tr>
-<<<<<<< HEAD
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>                        
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                </tr>
-                <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                </tr>
-                <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>                        
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                </tr>
-                <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-                </tr>
-                <tr>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>                        
-                    </th>
-                    <th className="user">
-                        <Button>
-                            <span>
-                                <i className="fa fa-user-plus fa-lg"></i> join
-                            </span>
-                        </Button>
-                    </th>
-=======
                   <PlayerSlot gameid="0" team="teamA" slotNo="0" steamUser={this.state.teamA?.[0]?.steamId}/>
                   <PlayerSlot gameid="0" team="teamB" slotNo="0" steamUser={this.state.teamB?.[0]?.steamId}/>
                 </tr>
@@ -136,7 +50,6 @@ export class TableData extends React.Component {
                 <tr>
                   <PlayerSlot gameid="0" team="teamA" slotNo="4" steamUser={this.state.teamA?.[4]?.steamId}/>
                   <PlayerSlot gameid="0" team="teamB" slotNo="4" steamUser={this.state.teamB?.[4]?.steamId}/>
->>>>>>> 8ef2e5c4b5af255953a6e64c2dbd361cd762d92c
                 </tr>
 
             </tbody>
