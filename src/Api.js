@@ -116,7 +116,7 @@ export var postAuthOpenid = function()
 
 export var getAuthOpenidReturn = function(openididentity)
 {
-  return axios({ url: 'http://localhost:8081/auth/openid/return' + '?openid.identity=' + encodeURIComponent(openididentity)
+  return axios({ url: `http://localhost:8081/auth/openid/return?openid.identity=` + encodeURIComponent(openididentity)
     , method: 'get'
     });
 }
