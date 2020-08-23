@@ -1,8 +1,5 @@
 import axios from 'axios'
-
-export {getGameById, postGameByIdTeamA, postGameByIdTeamB};
-
-var getGameById = function(id)
+export var getGameById = function(id)
 {
   return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + ''
     , method: 'get'
@@ -11,7 +8,7 @@ var getGameById = function(id)
 
 
 
-var postGameByIdTeamA = function(id, body)
+export var postGameByIdTeamA = function(id, body)
 {
   return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/teamA'
     , method: 'post'
@@ -22,9 +19,9 @@ var postGameByIdTeamA = function(id, body)
 
 
 
-var postGameByIdTeamB = function(id, body)
+export var postGameByIdTeamB = function(id, body)
 {
-  return axios({ url: 'localhost:8081/game/' + encodeURIComponent(id) + '/teamB'
+  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/teamB'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -33,9 +30,9 @@ var postGameByIdTeamB = function(id, body)
 
 
 
-var postGameById = function(id, body)
+export var postGameByIdUndecided = function(id, body)
 {
-  return axios({ url: 'localhost:8081/game/' + encodeURIComponent(id) + ''
+  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/undecided'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -44,9 +41,9 @@ var postGameById = function(id, body)
 
 
 
-var deleteGameById = function(id, body)
+export var deleteGameById = function(id, body)
 {
-  return axios({ url: 'localhost:8081/game/' + encodeURIComponent(id) + ''
+  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + ''
     , method: 'delete'
     , data: body
     , responseType: 'json'
@@ -55,9 +52,9 @@ var deleteGameById = function(id, body)
 
 
 
-var postGameByIdVoteMap = function(id, body)
+export var postGameByIdVoteMap = function(id, body)
 {
-  return axios({ url: 'localhost:8081/game/' + encodeURIComponent(id) + '/voteMap'
+  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/voteMap'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -66,9 +63,9 @@ var postGameByIdVoteMap = function(id, body)
 
 
 
-var postGameByIdVoteShuffle = function(id, body)
+export var postGameByIdVoteShuffle = function(id, body)
 {
-  return axios({ url: 'localhost:8081/game/' + encodeURIComponent(id) + '/voteShuffle'
+  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/voteShuffle'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -77,18 +74,18 @@ var postGameByIdVoteShuffle = function(id, body)
 
 
 
-var getGameByIdConfig = function(id)
+export var getGameByIdConfig = function(id)
 {
-  return axios({ url: 'localhost:8081/game/' + encodeURIComponent(id) + '/config'
+  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/config'
     , method: 'get'
     });
 }
 
 
 
-var postGameByIdReady = function(id, body)
+export var postGameByIdReady = function(id, body)
 {
-  return axios({ url: 'localhost:8081/game/' + encodeURIComponent(id) + '/ready'
+  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/ready'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -97,9 +94,9 @@ var postGameByIdReady = function(id, body)
 
 
 
-var postGameNew = function(body)
+export var postGameNew = function(body)
 {
-  return axios({ url: 'localhost:8081/game/new'
+  return axios({ url: 'http://localhost:8081/game/new'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -108,18 +105,18 @@ var postGameNew = function(body)
 
 
 
-var postAuthOpenid = function()
+export var postAuthOpenid = function()
 {
-  return axios({ url: 'localhost:8081/auth/openid'
+  return axios({ url: 'http://localhost:8081/auth/openid'
     , method: 'post'
     });
 }
 
 
 
-var getAuthOpenidReturn = function(openididentity)
+export var getAuthOpenidReturn = function(openididentity)
 {
-  return axios({ url: 'localhost:8081/auth/openid/return' + '?openid.identity=' + encodeURIComponent(openididentity)
+  return axios({ url: 'http://localhost:8081/auth/openid/return' + '?openid.identity=' + encodeURIComponent(openididentity)
     , method: 'get'
     });
 }
