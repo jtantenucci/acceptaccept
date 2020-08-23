@@ -5,11 +5,14 @@ export class PlayerSlot extends React.Component {
 
     constructor(props) {
         super(props);
-        this.steamUser = this.props.steamUser;
         this.gameid = this.props.gameid;
         this.team = this.props.team;
         this.slotNo = Number(this.props.slotNo);
         this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            steamUser : this.props.steamUser,
+            img : this.props.img
+        }
     }
 
     handleClick = (e) => {
@@ -19,19 +22,22 @@ export class PlayerSlot extends React.Component {
         {
             if(this.team === "teamA")
                 {
-                    console.log("I was clicked");
-                    postGameByIdTeamA(this.gameid, [this.slotNo, {steamId:Number(steamid)}])
+                    postGameByIdTeamA(this.gameid, [this.slotNo, Number(steamid)])
                         .then(game => {
-                            console.log(game.data);
+                            this.setState({steamUser: game.data.teamA?.[this.slotNo]?.username,
+                                           img: game.data.teamA?.[this.slotNo]?.avatarFull
+                                     });
+
                             })
                         .catch(err => console.log(err))
                 }
             else
                 {
-                    console.log("teamB!");
-                    postGameByIdTeamB(this.gameid, [this.slotNo, {steamId:Number(steamid)}])
+                    postGameByIdTeamB(this.gameid, [this.slotNo, Number(steamid)])
                         .then(game => {
                             console.log(game.data);
+                            this.setState({steamUser: game.data.teamB?.[this.slotNo]?.username,
+                                           img: game.data.teamB?.[this.slotNo]?.avatarFull});
                             })
                         .catch(err => console.log(err))
                 }
@@ -43,7 +49,7 @@ export class PlayerSlot extends React.Component {
     render () {
         return (
             <th onClick={this.handleClick} className="user">
-            {this.props.steamUser}
+              <img src={this.state.img}/> {this.state.steamUser}
             </th>
         )
     }

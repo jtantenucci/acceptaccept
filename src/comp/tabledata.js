@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
 import { PlayerSlot } from './playerslot'
-import {getGameById} from '../Api'
+import {getGameById, getSteam} from '../Api'
 
 export class TableData extends React.Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export class TableData extends React.Component {
       this.gameid = 0;
       this.update = this.update.bind(this);
     }
-    update = async () => {
+    update = () => {
       getGameById(this.gameid).then(game => {
         let teamA = game.data.teamA;
         let teamB = game.data.teamB;
@@ -22,6 +22,14 @@ export class TableData extends React.Component {
       });
     }
   render () {
+    var rows = []
+    for (var i = 0; i < 5; i++)
+                    {
+                      rows.push(<tr>
+                                  <PlayerSlot gameid="0" team="teamA" slotNo={i} steamUser={this.state.teamA?.[i]?.username} img={this.state.teamA?.[i]?.avatar}/>
+                                  <PlayerSlot gameid="0" team="teamB" slotNo={i} steamUser={this.state.teamB?.[i]?.username} img={this.state.teamB?.[i]?.avatar}/>
+                                  </tr>)
+                    }
     return (
         <Table hover>
             <thead>
@@ -31,27 +39,7 @@ export class TableData extends React.Component {
                 </tr>
             </thead>                
           <tbody onClick={this.update}>
-                <tr>
-                  <PlayerSlot gameid="0" team="teamA" slotNo="0" steamUser={this.state.teamA?.[0]?.steamId}/>
-                  <PlayerSlot gameid="0" team="teamB" slotNo="0" steamUser={this.state.teamB?.[0]?.steamId}/>
-                </tr>
-                <tr>
-                  <PlayerSlot gameid="0" team="teamA" slotNo="1" steamUser={this.state.teamA?.[1]?.steamId}/>
-                  <PlayerSlot gameid="0" team="teamB" slotNo="1" steamUser={this.state.teamB?.[1]?.steamId}/>
-                </tr>
-                <tr>
-                  <PlayerSlot gameid="0" team="teamA" slotNo="2" steamUser={this.state.teamA?.[2]?.steamId}/>
-                  <PlayerSlot gameid="0" team="teamB" slotNo="2" steamUser={this.state.teamB?.[2]?.steamId}/>
-                </tr>
-                <tr>
-                  <PlayerSlot gameid="0" team="teamA" slotNo="3" steamUser={this.state.teamA?.[3]?.steamId}/>
-                  <PlayerSlot gameid="0" team="teamB" slotNo="3" steamUser={this.state.teamB?.[3]?.steamId}/>
-                </tr>
-                <tr>
-                  <PlayerSlot gameid="0" team="teamA" slotNo="4" steamUser={this.state.teamA?.[4]?.steamId}/>
-                  <PlayerSlot gameid="0" team="teamB" slotNo="4" steamUser={this.state.teamB?.[4]?.steamId}/>
-                </tr>
-
+            {rows}
             </tbody>
         </Table>
     )
