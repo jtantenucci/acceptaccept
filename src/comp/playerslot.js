@@ -1,35 +1,50 @@
-import React, { Component } from 'react';
+import React from 'react'
+import {getGameById, postGameByIdTeamA, postGameByIdTeamB} from '../Api'
+import {axios} from 'axios'
+export class PlayerSlot extends React.Component {
 
-class PlayerSlot extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            playerId: null
-        };
-    }
-
-    handleChange = (e) => {
-        this.setState({
-            id: e.target.value
-        });
+        this.steamUser = this.props.steamUser;
+        this.gameid = this.props.gameid;
+        this.team = this.props.team;
+        this.slotNo = Number(this.props.slotNo);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick = (e) => {
-        const id = localStorage.getItem('steamid');
-        if(this.state.id == null && id)
+        const steamid = localStorage.getItem('steamId');
+        console.log(localStorage.getItem("steamId"));
+        if(steamid)
         {
-            api.postGameByIdA(id);
-            this.setState({id: e});
+            if(this.team === "teamA")
+                {
+                    console.log("I was clicked");
+                    postGameByIdTeamA(this.gameid, [this.slotNo, {steamId:Number(steamid)}])
+                        .then(game => {
+                            console.log(game.data);
+                            })
+                        .catch(err => console.log(err))
+                }
+            else
+                {
+                    console.log("teamB!");
+                    postGameByIdTeamB(this.gameid, [this.slotNo, {steamId:Number(steamid)}])
+                        .then(game => {
+                            console.log(game.data);
+                            })
+                        .catch(err => console.log(err))
+                }
         }
     }
 
+    // fixMe wasteful API calls
+
     render () {
         return (
-            <td onClick={this.handleClick} className="user">
-                {this.handleChange}
-            </td>
+            <th onClick={this.handleClick} className="user">
+            {this.props.steamUser}
+            </th>
         )
     }
 }
-
-export default PlayerSlot;
