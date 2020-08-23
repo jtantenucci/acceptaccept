@@ -1,5 +1,4 @@
 import React from 'react'
-import {getGameById, postGameByIdTeamA, postGameByIdTeamB} from '../Api'
 import {axios} from 'axios'
 export class PlayerSlot extends React.Component {
 
@@ -20,7 +19,7 @@ export class PlayerSlot extends React.Component {
     render () {
         return (
             <th onClick={this.handleClick} className="user">
-              <img src={this.props.img}/> {this.props.steamUser}
+              <img src={this.props.img} alt="/"/> {this.props.steamUser}
             </th>
         )
     }
