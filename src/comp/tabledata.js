@@ -7,8 +7,8 @@ const TableData = () => {
         <Table hover>
             <thead>
                 <tr>
-                    <th className="head">team 1</th>
-                    <th className="head">team 2</th>
+                    <th className="head"><i className="fa fa-group fa-md"></i> team 1</th>
+                    <th className="head"><i className="fa fa-group fa-md"></i> team 2</th>
                 </tr>
             </thead>                
             <tbody>
@@ -16,14 +16,14 @@ const TableData = () => {
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>                        
                     </th>
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>
                     </th>
@@ -32,14 +32,14 @@ const TableData = () => {
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>
                     </th>
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>
                     </th>
@@ -48,14 +48,14 @@ const TableData = () => {
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>                        
                     </th>
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>
                     </th>
@@ -64,14 +64,14 @@ const TableData = () => {
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>
                     </th>
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>
                     </th>
@@ -80,14 +80,14 @@ const TableData = () => {
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>                        
                     </th>
                     <th className="user">
                         <Button>
                             <span>
-                                <i className="fa fa-group fa-lg"></i> join
+                                <i className="fa fa-user-plus fa-lg"></i> join
                             </span>
                         </Button>
                     </th>

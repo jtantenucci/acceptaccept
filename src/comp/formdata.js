@@ -5,7 +5,7 @@ const FormData = () => {
     return (
         <Form>
             <FormGroup>
-                <Label for="mapSelect">map select</Label>
+                <Label for="mapSelect"><i className="fa fa-map-o fa-md"></i> map select</Label>
                     <Input type="select" name="select" id="mapSelect">
                         <option>de_inferno</option>
                         <option>de_vertigo</option>
