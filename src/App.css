@@ -230,6 +230,10 @@ button.btn.btn-launch.btn-secondary:hover {
   color: white;
 }
 /* styles for mapvote modal */
+h5.modal-title {
+  padding-left: 15px;
+}
+
 .modal-vote-text {
   color: var(--tertiary);
   font-weight: 100;
@@ -264,6 +268,7 @@ div.card-header {
 }
 .button-active {
   background: #ad9cad;
+  
 }
 
 .button-vote {
@@ -271,6 +276,7 @@ div.card-header {
   color: var(--tertiary);
   align-self: stretch;
 }
+
 
 .button-vote:hover {
   color: var(--tertiary);

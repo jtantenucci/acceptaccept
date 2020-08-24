@@ -16,7 +16,7 @@ const MapSelectModal = (props) => {
             <Button color="primary" onClick={toggle}></Button>
             <Modal isOpen={modal} toggle={toggle} 
                 size="xl" className={vote}>
-                <ModalHeader toggle={toggle}><i className="fa fa-map-o fa-md"></i> map select</ModalHeader>
+                <ModalHeader className="modal-vote-head" toggle={toggle}><i className="fa fa-map-o fa-md"></i> map select</ModalHeader>
                 <ModalBody>
                     <FormData2 />
                 </ModalBody>
