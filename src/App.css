@@ -229,7 +229,59 @@ button.btn.btn-launch.btn-secondary:hover {
   background: #75717c;
   color: white;
 }
+/* styles for mapvote modal */
+h5.modal-title {
+  padding-left: 15px;
+}
 
+.modal-vote-text {
+  color: var(--tertiary);
+  font-weight: 100;
+  font-family: Helvetica;
+  font-style: italic;
+}
+
+/* styles for mapvote cards */
+
+div.card {
+  background: var(--primary);
+  border-top: 0px;
+}
+
+div.card-body {
+  align-items: stretch;
+  padding: 10px;
+}
+
+img.card-img-top {
+  height: max-content;
+}
+
+div.card-header {
+  color: var(--tertiary);
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: Helvetica;
+  font-style: italic;
+  text-shadow: 0.5px 0.5px 3px lightgrey;
+}
+.button-active {
+  background: #ad9cad;
+  
+}
+
+.button-vote {
+  border-color: var(--tertiary);
+  color: var(--tertiary);
+  align-self: stretch;
+}
+
+
+.button-vote:hover {
+  color: var(--tertiary);
+  background: #ad9cad;
+}
 
 /* styles for footer */
 

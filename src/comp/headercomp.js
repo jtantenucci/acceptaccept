@@ -34,7 +34,7 @@ class Header extends Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="#">
+                                <NavLink className="nav-link" href="http://cs.moderan.org:5123/leaderboard">
                                     <span className="fa fa-bar-chart fa-lg"></span> Match Stats
                                 </NavLink>
                             </NavItem>
