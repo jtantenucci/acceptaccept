@@ -1,5 +1,4 @@
 import React from 'react'
-import {axios} from 'axios'
 export class PlayerSlot extends React.Component {
 
     constructor(props) {
@@ -13,8 +12,6 @@ export class PlayerSlot extends React.Component {
         }
     }
 
-
-    // fixMe wasteful API calls
 
     render () {
         return (

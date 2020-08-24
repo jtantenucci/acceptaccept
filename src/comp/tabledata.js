@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button } from 'reactstrap';
+import { Table } from 'reactstrap';
 import { PlayerSlot } from './playerslot'
 import {getGameById, postGameByIdTeamA, postGameByIdTeamB} from '../Api'
 

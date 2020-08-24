@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TableData from './tabledata';
-import FormData from './formdata';
+import MapVoteModal from './mapvote';
 import ButtonData from './buttondata';
 
 class MatchLobby extends Component {
@@ -11,7 +11,7 @@ class MatchLobby extends Component {
                 <br></br>
                 <div className="row">
                     <div className="col">
-                        <FormData />
+                        <MapVoteModal />
                     </div>
                     <div className="col shuffle">
                         <ButtonData />

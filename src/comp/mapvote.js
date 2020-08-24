@@ -13,7 +13,7 @@ const MapSelectModal = (props) => {
 
     return(
         <div>
-            <Button color="primary" onClick={toggle}></Button>
+            <Button color="primary" onClick={toggle}>map</Button>
             <Modal isOpen={modal} toggle={toggle} 
                 size="xl" className={vote}>
                 <ModalHeader className="modal-vote-head" toggle={toggle}><i className="fa fa-map-o fa-md"></i> map select</ModalHeader>
