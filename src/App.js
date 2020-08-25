@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import Header from './comp/headercomp';
-import Footer from './comp/footercomp';
-import MatchLobby from './comp/matchlobby';
+import Main from './comp/maincomp';
 import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <MatchLobby />
-        <Footer />
-      </div>
+      <Router>
+        <div className="App">
+          <Main />
+        </div>
+      </Router>
     );
   }
 }

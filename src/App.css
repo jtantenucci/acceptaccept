@@ -243,11 +243,15 @@ h5.modal-title {
 
 /* styles for mapvote cards */
 
+
 div.card {
   background: var(--primary);
   border-top: 0px;
 }
 
+div.col-4.map-vote {
+  padding: 0px;
+}
 div.card-body {
   align-items: stretch;
   padding: 10px;
@@ -260,7 +264,7 @@ img.card-img-top {
 div.card-header {
   color: var(--tertiary);
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 100;
   font-family: Helvetica;
   font-style: italic;
@@ -295,7 +299,8 @@ div.card-header {
   text-shadow: 0.5px 0.5px 2px lightgrey;
 }
 
-.footerh5 {
+a.footerh5 {
+  color: white;
   letter-spacing: 1.5px;
   font-family: Helvetica;
   font-style: italic;

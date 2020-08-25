@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginModal from './loginform';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, NavbarToggler, Collapse, Jumbotron } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse, Jumbotron } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     constructor (props) {
@@ -23,32 +24,30 @@ class Header extends Component {
                 <Navbar dark light expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand href="/">
+                        <NavbarBrand href="/Home">
                             <img src="accept2.png" height="30" width="50" alt="acceptlogo" />
                         </NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav className="mr-auto" navbar>
                             <NavItem>
-                                <NavLink className="nav-link" to="#">
-                                    <span className="fa fa-server fa-lg"></span> Server
+                                <NavLink className="nav-link" to="/matchlobby">
+                                    <span className="fa fa-server fa-lg"></span> match lobby
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" href="http://cs.moderan.org:5123/leaderboard">
-                                    <span className="fa fa-bar-chart fa-lg"></span> Match Stats
+                                <NavLink className="nav-link" to="/home">
+                                    <span className="fa fa-bar-chart fa-lg"></span> Stats
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="#">
-                                    <span className="fa fa-globe fa-lg"></span> Official Site
+                                <NavLink className="nav-link" to="/home">
+                                    <span className="fa fa-globe fa-lg"></span> Home
                                 </NavLink>
                             </NavItem>
                             </Nav>
                             <Nav className="accept">
                                 <NavItem>
-                                    <NavLink>
-                                        <LoginModal />
-                                    </NavLink>
+                                    <LoginModal />
                                 </NavItem>
                             </Nav>
                         </Collapse>
