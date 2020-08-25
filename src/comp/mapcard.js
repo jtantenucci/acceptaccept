@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardImg, CardBody, Button, CardHeader, CardGroup } from 'reactstrap';
+import { Card, CardImg, CardBody, Button, CardHeader } from 'reactstrap';
 
 function RenderMapCard ({maps}) {
     const [mapSelected, setMapSelected] = useState(null);

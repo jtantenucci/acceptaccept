@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FormData2 from './formdata2';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const MapSelectModal = (props) => {
+const MapVoteModal = (props) => {
     const {
         vote
     } = props;
@@ -29,4 +29,4 @@ const MapSelectModal = (props) => {
     );
 }
 
-export default MapSelectModal;
+export default MapVoteModal;
