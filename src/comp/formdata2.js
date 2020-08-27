@@ -1,23 +1,48 @@
 import React, { Component } from 'react';
-import MapCard from './mapcard';
 import { MAPS } from '../shared/maps';
-import { CardGroup } from 'reactstrap';
+import { Card } from 'reactstrap';
+import RenderMapCardHead from './rendermapcardhead';
+import RenderMapCardButtons from './rendermapcardbuttons';
+import RenderMapCardImage from './mapcardform';
 
 class FormData2 extends Component {
     constructor(props) {
         super(props);
-            this.state = {
+        this.state = { 
             maps: MAPS,
-        };
-    }
+            selected: this.props.initialSelected 
+        }
+    }    
 
+    onChange(selected) {
+        console.log ('%s selected', selected);
+        this.setState({ selected });
+    }
+    
     render () {
-        return (
+        const selectedKey = this.state.selected;
+        const maps = this.props.maps.map((maps, key) => {
+            return (
+                <div key={maps.id} className="col-4 map-vote">
+                    <Card>
+                        <RenderMapCardHead className="CardHeader" maps={maps} />
+                        <RenderMapCardImage maps={maps} />
+                        <RenderMapCardButtons
+                            maps={maps}                    
+                            selected={selectedKey === key} 
+                            onChange={evt => this.onChange(key, evt)} 
+                        />
+                    </Card>
+                </div>
+            )
+        });        
+        
+
+        return (    
             <div className="container">
-                <p className="modal-vote-text">select a map to vote from:</p>
-                <CardGroup className="map-vote-group">
-                    <MapCard maps={this.state.maps} />
-                </CardGroup>
+                <div className="row">
+                    {maps}
+                </div>
             </div>
         );
     }
