@@ -1,11 +1,11 @@
 import React from 'react';
-import { Label, CardFooter, Input, Button, InputGroupAddon } from 'reactstrap';
+import { Label, Button, CardBody } from 'reactstrap';
 const RenderMapCardButtons = ({ maps, selected, onChange }) => {
     return(
             <React.Fragment>
-                <CardFooter>
+                <CardBody className="card-body">
                     <Label key={maps.key} htmlFor={maps.key} className="vote-radio" />
-                        <Button outline="true"
+                        <Button
                             size="sm"
                             className="button-vote btn-block"
                             id={maps.key}  
@@ -14,9 +14,9 @@ const RenderMapCardButtons = ({ maps, selected, onChange }) => {
                             value={maps.key} 
                             onClick={onChange}
                             >
-                            {maps.label}
-                    </Button>        
-                </CardFooter>
+                            <i className="fa fa-plus-square-o fa-sm"></i> {maps.label}
+                        </Button>       
+                </CardBody>
             </React.Fragment>
         );
     }

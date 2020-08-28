@@ -107,6 +107,7 @@ h5.modal-title {
 div.modal-body {
   background-color: #ad9cad;
   color: white;
+  max-width: 1280px;
 }
 
 div.modal-footer {
@@ -133,7 +134,7 @@ button.btn.btn-secondary {
 }
 
 button.btn.btn-secondary:hover {
-  background: #75717c;
+  background: #8675a3;
   color: white;
 }
 
@@ -180,8 +181,19 @@ th.user {
 }
 
 button.btn.btn-secondary {
+  border-color: var(--tertiary);
   font-style: italic;
   font-family: Helvetica;
+}
+
+button.btn.btn-secondary:hover {
+  border-color: var(--tertiary);
+
+}
+
+button.btn.btn-secondary:active {
+  background-color: var(--secondary);
+  box-shadow: 0 0 0 0.2rem var(--secondary);
 }
 
 table.table.table-hover {
@@ -244,14 +256,23 @@ h5.modal-title {
   font-style: italic;
 }
 
+.modal-body {
+  flex: 0 0;
+}
+
+
+
+.modal-content {
+  flex: 0 0;
+}
+
 /* styles for mapvote cards */
 
 
 div.card {
   background: var(--primary);
   border-top: 0px;
-  padding: 5px;
-  height: auto;
+  margin: 3px;
 }
 
 div.col-4.map-vote {
@@ -259,18 +280,17 @@ div.col-4.map-vote {
 }
 div.card-body {
   align-items: stretch;
-  padding: 10px;
-  height: auto;
+  padding-bottom: 10px;
+  padding-top: 0px;
 }
 
 img.card-img-top {
-  height: auto;
+  height: max-content;
 }
 
 div.card-header {
   color: var(--tertiary);
   padding: 10px;
-  height: 50px;
   font-size: 20px;
   font-weight: 100;
   font-family: Helvetica;
@@ -278,27 +298,31 @@ div.card-header {
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
 
-div.card-footer {
-  height: auto;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
+
 .button-active {
   background: #ad9cad;
+    background-color: var(--secondary);
+    box-shadow: 0 0 0 0.2rem var(--secondary);
+}
+
+.button-vote.btn-block.btn.btn-secondary.btn-sm {
+  border-color: var(--tertiary);
   
 }
 
-.button-vote {
-  border-color: var(--tertiary);
-  color: var(--tertiary);
-  align-self: stretch;
+
+.button-vote.btn-block.btn.btn-secondary.btn-sm:active {
+  background-color: var(--secondary);
+  background: var(--secondary);
+  box-shadow: 0 0 0 0.2rem var(--secondary);
+}
+
+.button-vote.btn-block.btn.btn-secondary.btn-sm:active {
+  background-color: var(--secondary);
+  box-shadow: 0 0 0 0.2rem var(--secondary);
 }
 
 
-.button-vote:hover {
-  color: var(--tertiary);
-  background: var(--primary);
-}
 
 /* styles for footer */
 
