@@ -3,7 +3,7 @@ import { CardHeader } from 'reactstrap';
 
 const RenderMapCardHead = ({ maps }) => {
     return(
-            <CardHeader>
+            <CardHeader className="card-header">
                 {maps.name}
             </CardHeader>
         );

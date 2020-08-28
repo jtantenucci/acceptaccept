@@ -37,7 +37,7 @@ class FormData2 extends Component {
     
     render () {
         const selectedKey = this.state.selected;
-        const maps = this.props.maps.map((maps) => {
+        const maps = this.state.maps.map((maps) => {
             return (
                 <div key={maps.id} className="col-4 map-vote">
                     <Card className="mapvote">
@@ -57,8 +57,8 @@ class FormData2 extends Component {
         return (
             <Form onSubmit={this.handleSubmit}> 
                 <ModalBody>
-                <p className="modal-vote-text">select a map to vote from:</p>
                     <div className="container">
+                    <p className="modal-vote-text">select a map to vote from:</p>
                         <div className="row">
                             {maps}
                         </div>
@@ -66,7 +66,7 @@ class FormData2 extends Component {
                 </ModalBody>
                 <ModalFooter>
                         <Button type="submit" submitted={this.state.selected} color="secondary"><span className="fa fa-paper-plane-o fa-lg"></span> vote</Button>{' '}
-                        <Button color="danger">cancel</Button>
+                        <Button color="danger" >cancel</Button>
                 </ModalFooter>
             </Form>
         );
