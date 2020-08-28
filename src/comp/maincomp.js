@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Header from './headercomp';
-import Home from './homecomp';
 import MatchLobby from './matchlobby';
 import Footer from './footercomp';
-import { MAPS } from '../shared/maps';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 import qs from 'qs'
 
+import Home from './homecomp';
 
 class Main extends Component {
     constructor(props) {
@@ -21,7 +20,6 @@ class Main extends Component {
         if(params)
             localStorage.setItem('steamid', params)  // FIXME: you can fake being any steamid you want
     }
-
     render() {
         return (
             <Router>
@@ -31,7 +29,7 @@ class Main extends Component {
                         <Home />
                     </Route>
                     <Route path="/matchlobby">
-                        <MatchLobby />
+                        <MatchLobby  />
                     </Route>
                 </Switch>
                 <Footer />
