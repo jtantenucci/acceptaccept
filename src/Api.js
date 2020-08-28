@@ -1,7 +1,8 @@
 import axios from "axios"
+
 export var getGameById = function(id)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + ''
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + ''
     , method: 'get'
     });
 }
@@ -10,7 +11,7 @@ export var getGameById = function(id)
 
 export var postGameByIdTeamA = function(id, body)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/teamA'
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/teamA'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -21,7 +22,7 @@ export var postGameByIdTeamA = function(id, body)
 
 export var postGameByIdTeamB = function(id, body)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/teamB'
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/teamB'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -32,7 +33,7 @@ export var postGameByIdTeamB = function(id, body)
 
 export var postGameByIdUndecided = function(id, body)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/undecided'
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/undecided'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -43,7 +44,7 @@ export var postGameByIdUndecided = function(id, body)
 
 export var deleteGameById = function(id, body)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + ''
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + ''
     , method: 'delete'
     , data: body
     , responseType: 'json'
@@ -54,7 +55,7 @@ export var deleteGameById = function(id, body)
 
 export var postGameByIdVoteMap = function(id, body)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/voteMap'
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/voteMap'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -65,7 +66,7 @@ export var postGameByIdVoteMap = function(id, body)
 
 export var postGameByIdVoteShuffle = function(id, body)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/voteShuffle'
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/voteShuffle'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -76,7 +77,7 @@ export var postGameByIdVoteShuffle = function(id, body)
 
 export var getGameByIdConfig = function(id)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/config'
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/config'
     , method: 'get'
     });
 }
@@ -85,7 +86,8 @@ export var getGameByIdConfig = function(id)
 
 export var postGameByIdReady = function(id, body)
 {
-  return axios({ url: 'http://localhost:8081/game/' + encodeURIComponent(id) + '/ready'
+
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/ready'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -96,7 +98,7 @@ export var postGameByIdReady = function(id, body)
 
 export var postGameNew = function(body)
 {
-  return axios({ url: 'http://localhost:8081/game/new'
+  return axios({ url: 'http://queue.boner1.com/api/game/new'
     , method: 'post'
     , data: body
     , responseType: 'json'
@@ -105,10 +107,10 @@ export var postGameNew = function(body)
 
 
 
-export var postAuthOpenid = function()
+export var getAuthOpenid = function()
 {
-  return axios({ url: 'http://localhost:8081/auth/openid'
-    , method: 'post'
+  return axios({ url: 'http://queue.boner1.com/api/auth/openid'
+    , method: 'get'
     });
 }
 
@@ -116,7 +118,7 @@ export var postAuthOpenid = function()
 
 export var getAuthOpenidReturn = function(openididentity)
 {
-  return axios({ url: `http://localhost:8081/auth/openid/return?openid.identity=` + encodeURIComponent(openididentity)
+  return axios({ url: 'http://queue.boner1.com/api/auth/openid/return' + '?openid.identity=' + encodeURIComponent(openididentity)
     , method: 'get'
     });
 }

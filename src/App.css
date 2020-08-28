@@ -187,7 +187,10 @@ button.btn.btn-secondary {
 table.table.table-hover {
   margin-bottom: 0px;
 }
-
+table {
+  table-layout: fixed;
+  width: 70%;
+}
 
 /* styles for main form */
 

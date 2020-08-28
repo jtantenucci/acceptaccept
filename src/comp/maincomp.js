@@ -5,14 +5,21 @@ import MatchLobby from './matchlobby';
 import Footer from './footercomp';
 import { MAPS } from '../shared/maps';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
+import qs from 'qs'
 
 
 class Main extends Component {
     constructor(props) {
+        console.log(props)
         super(props);
         this.state = {
             maps: MAPS,
         };
+        let params = qs.parse(props.location.search)["?id"]
+        console.log(params)
+        if(params)
+            localStorage.setItem('steamid', params)  // FIXME: you can fake being any steamid you want
     }
 
     render() {
@@ -33,4 +40,4 @@ class Main extends Component {
       }
     }
 
-export default Main;
+export default withRouter(Main);

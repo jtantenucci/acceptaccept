@@ -18,7 +18,7 @@ const LoginModal = (props) => {
                     <p className="modaltext">Log in to steam account and authenticate, then join an open lobby slot.</p>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="secondary" onClick={toggle}><span className="fa fa-steam fa-lg"></span> Log In</Button>{' '}
+                    <Button color="secondary" href="api/auth/openid"><span className="fa fa-steam fa-lg"></span> Log In</Button>{' '}
                     <Button color="danger" onClick={toggle}>Cancel</Button>
                 </ModalFooter>
             </Modal> 
