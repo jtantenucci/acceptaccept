@@ -3,7 +3,6 @@ import Header from './headercomp';
 import MatchLobby from './matchlobby';
 import Footer from './footercomp';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import FormData2 from './formdata2';
 import Home from './homecomp';
 
 

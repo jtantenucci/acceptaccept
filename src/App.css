@@ -247,6 +247,8 @@ h5.modal-title {
 div.card {
   background: var(--primary);
   border-top: 0px;
+  padding: 5px;
+  height: auto;
 }
 
 div.col-4.map-vote {
@@ -255,20 +257,28 @@ div.col-4.map-vote {
 div.card-body {
   align-items: stretch;
   padding: 10px;
+  height: auto;
 }
 
 img.card-img-top {
-  height: max-content;
+  height: auto;
 }
 
 div.card-header {
   color: var(--tertiary);
   padding: 10px;
-  font-size: 15px;
+  height: 50px;
+  font-size: 20px;
   font-weight: 100;
   font-family: Helvetica;
   font-style: italic;
   text-shadow: 0.5px 0.5px 3px lightgrey;
+}
+
+div.card-footer {
+  height: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .button-active {
   background: #ad9cad;
@@ -284,7 +294,7 @@ div.card-header {
 
 .button-vote:hover {
   color: var(--tertiary);
-  background: #ad9cad;
+  background: var(--primary);
 }
 
 /* styles for footer */
