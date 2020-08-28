@@ -12,9 +12,6 @@ class Main extends Component {
     constructor(props) {
         console.log(props)
         super(props);
-        this.state = {
-            maps: MAPS,
-        };
         let params = qs.parse(props.location.search)["?id"]
         console.log(params)
         if(params)
