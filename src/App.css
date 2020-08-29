@@ -17,6 +17,13 @@ body {
   background-color: var(--primary);
 }
 
+a { 
+  font-family: Helvetica;
+  font-style: italic;
+  color: var(--tertiary);
+  
+}
+
 li.nav-item {
   color: var(--tertiary);
 }
