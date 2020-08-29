@@ -10,7 +10,7 @@ class MatchLobby extends Component {
                 <TableData />
                 <br></br>
                 <div className="row">
-                    <div className="col">
+                    <div className="col vote">
                         <MapVoteModal />
                     </div>
                     <div className="col shuffle">
