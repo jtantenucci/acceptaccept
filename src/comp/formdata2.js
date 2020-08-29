@@ -4,6 +4,7 @@ import { Card, Form, Button, ModalBody, ModalFooter } from 'reactstrap';
 import RenderMapCardHead from './rendermapcardhead';
 import RenderMapCardButtons from './rendermapcardbuttons';
 import RenderMapCardImage from './rendermapcardimage';
+import {postGameByIdVoteMap} from '../Api.js'
 
 class FormData2 extends Component {
     constructor(props) {
@@ -32,6 +33,8 @@ class FormData2 extends Component {
 
     handleSubmit(event) {
         console.log( this.state.selected + ' submitted');
+        let id = localStorage.getItem('steamid');
+        postGameByIdVoteMap(0, [id, {getName: this.state.selected}]).then(console.log("VOTED :)"));
         event.preventDefault();
     }
     
