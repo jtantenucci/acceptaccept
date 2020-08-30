@@ -248,6 +248,21 @@ button.player-ready-button.btn.btn-primary {
 
 }
 
+button.player-leave-button.btn.btn-primary {
+  margin-top: 60px;
+
+}
+
+button.player-ready-button.btn.btn-primary:hover {
+  margin-top: 60px;
+  background: #8675a3;
+}
+
+button.player-leave-button.btn.btn-primary:hover {
+  margin-top: 60px;
+  background: #8675a3;
+}
+
 div.user.row {
   height: 128px;
   padding-top: 10px;

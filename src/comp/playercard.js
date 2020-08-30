@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardBody, Row, CardHeader, Col, Media } from 'reactstrap';
+import { Button, Card, CardBody, Row, CardHeader, Col, Media, ButtonGroup } from 'reactstrap';
 
 
 function PlayerCard({steamUser, src, onClick, active, leave}) {
@@ -13,8 +13,10 @@ function PlayerCard({steamUser, src, onClick, active, leave}) {
                     <Media heading className="">
                         {steamUser}
                     </Media>
+                <ButtonGroup>
                     <Button className="player-ready-button" color="primary" onClick={onClick} active={active}>ready</Button>    
-                    <Button color="secondary" onClick={leave}>leave</Button>
+                    <Button className="player-leave-button" color="primary" onClick={leave}>leave</Button>
+                </ButtonGroup>
                 </Media>
             </Media>
         </div>
