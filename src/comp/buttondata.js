@@ -21,7 +21,7 @@ const ButtonData = () => {
                     <i>{shuffle} shuffle teams</i>
                 </span>
             </Button>
-            <Button className="btn btn-launch">
+            <Button href="steam://connect/csgo.boner1.com/gamers" className="btn btn-launch">
                 <span>
                     <i>{launch} launch server</i>
                 </span>

@@ -31,6 +31,8 @@ function Footer() {
                                     href="http://twitter.com/"><i className="fa fa-twitter"></i></a></li>
                                 <li><a className="btn btn-social-icon btn-google" 
                                     href="http://youtube.com/"><i className="fa fa-youtube"></i></a></li>
+                                <li><a className="btn btn-social-icon btn-twitter" 
+                                    href="https://steamcommunity.com/groups/Boner1"><i className="fa fa-steam"></i></a></li>
                             </ul>
                         </div>
                     </div>

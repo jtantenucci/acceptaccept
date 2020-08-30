@@ -11,15 +11,15 @@ const LoginModal = (props) => {
 
     return(
         <div>
-            <Button color="primary" onClick={toggle}><span className="fa fa-steam fa-lg"></span> accept!</Button>
+            <Button onClick={toggle}><span className="fa fa-steam fa-lg"></span> accept!</Button>
             <Modal isOpen={modal} toggle={toggle} className={login}>
-                <ModalHeader toggle={toggle}>Steam Login</ModalHeader>
+                <ModalHeader toggle={toggle}><span className="fa fa-steam fa-lg"></span> steam login</ModalHeader>
                 <ModalBody>
-                    <p className="modaltext">Log in to steam account and authenticate, then join an open lobby slot.</p>
+                    <p className="modaltext">log in to steam account and authenticate, then join an open lobby slot.</p>
                 </ModalBody>
                 <ModalFooter>
-                    <Button className="steam-login-button" href="api/auth/openid"><span className="fa fa-steam fa-lg"></span> Log In</Button>{' '}
-                    <Button color="danger" onClick={toggle}>Cancel</Button>
+                    <Button className="steam-login-button" href="api/auth/openid"><span className="fa fa-steam fa-lg"></span> log in</Button>{' '}
+                    <Button className="button-cancel-vote" onClick={toggle}>cancel</Button>
                 </ModalFooter>
             </Modal> 
         </div>

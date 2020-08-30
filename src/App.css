@@ -10,6 +10,22 @@ body {
   background-color: #ad9cad;
 }
 
+div.homepage-jumbotron.jumbotron {
+  padding-top: 100px;
+  padding-bottom: 457px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 80%;
+  background-image: url(https://cdn.discordapp.com/attachments/727729652134707201/727819137316814887/image0.jpg)
+}
+
+.homebutton {
+  margin-top: 8px;
+  text-align: center;
+  background: #89859c;
+  border: 0px;
+  font-style: italic;
+}
 
 /* styles for header/navbar */
 
@@ -72,7 +88,7 @@ div.col-12.col-sm-6 {
   text-align: justify;
   padding: 10px 0px 200px 0px;
   margin: 0px auto;
-  background: var(--primary);
+  background-color: #ad9cad;
   font-style: italic;
   font-family: Helvetica;
   color: floralwhite;
@@ -136,6 +152,16 @@ button.close:hover {
   color: white;
 }
 
+button.btn.btn-primary {
+  text-align: center;
+  background: #89859c;
+}
+
+button.btn.btn-primary:hover {
+  text-align: center;
+  background: #8675a3;
+}
+
 a.steam-login-button.btn.btn-secondary {
   text-align: center;
   background: #89859c;
@@ -162,10 +188,11 @@ button.btn.btn-primary {
   text-align: center;
   background: #89859c;
   border: 0px;
+  font-style: italic;
 }
 
 button.btn.btn-primary:hover {
-  background: #75717c;
+  background: #8675a3;
   color: white;
 }
 
@@ -235,6 +262,9 @@ label {
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
 
+div.row.row-buttons {
+  padding-bottom: 40px;
+}
 div.col.vote {
   padding: 10px 10px 0px 10px;
   text-align: left;
@@ -371,7 +401,7 @@ button.button-cancel-vote.btn.btn-secondary {
   color: var(--tertiary);
   font-family: Helvetica;
   font-weight: normal;
-  margin-top: 100px;
+  margin-top: 0px;
   padding: 20px 0px 20px 0px;
   text-shadow: 0.5px 0.5px 2px lightgrey;
 }

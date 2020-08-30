@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonGroup } from 'reactstrap';
+import PlayerCard from './playercard';
 export class PlayerSlot extends React.Component {
 
     constructor(props) {
@@ -19,8 +19,12 @@ export class PlayerSlot extends React.Component {
     render () {
         return (
             <th onClick={this.handleClick} className="user">
-              <img src={this.props.img} alt="dead game"/> {this.props.steamUser}
-              <Button color="primary" onClick={this.setReady} active={this.props.ready}>ready</Button>
+                <PlayerCard 
+                    onClick={this.setReady}
+                    src={this.props.img}
+                    active={this.props.ready}
+                    steamUser={this.props.steamUser}
+                />
             </th>
         )
     }
