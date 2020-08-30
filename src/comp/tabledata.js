@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { Card } from 'reactstrap';
 import { PlayerSlot } from './playerslot'
 import {getGameById, postGameByIdTeamA, postGameByIdTeamB, postGameByIdReady} from '../Api'
 import {w3cwebsocket as W3CWebSocket} from "websocket"
@@ -87,35 +87,32 @@ export class TableData extends React.Component {
     for (var i = 0; i < 5; i++) {
 
         rows.push(
-        <tr>
-          <PlayerSlot gameid="0"
-                      steamUser={this.state.teamA?.[i]?.username}
-                      ready={this.state.teamA?.[i]?.isReady}
-                      setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
-                      img={this.state.teamA?.[i]?.avatar}
-                      handleClick={this.handleClick(i, "teamA")}/>
-          <PlayerSlot gameid="0"
-                      steamUser={this.state.teamB?.[i]?.username}
-                      ready={this.state.teamB?.[i]?.isReady}
-                      setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
-                      img={this.state.teamB?.[i]?.avatar}
-                      handleClick={this.handleClick(i, "teamB")}/>
-        </tr>
+          <React.Fragment>
+              <div className="row lobby-players">
+                <PlayerSlot gameid="0"
+                              steamUser={this.state.teamA?.[i]?.username}
+                              ready={this.state.teamA?.[i]?.isReady}
+                              setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
+                              img={this.state.teamA?.[i]?.avatar}
+                              handleClick={this.handleClick(i, "teamA")}/>
+                  <PlayerSlot gameid="0"
+                                steamUser={this.state.teamB?.[i]?.username}
+                                ready={this.state.teamB?.[i]?.isReady}
+                                setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
+                                img={this.state.teamB?.[i]?.avatar}
+                                handleClick={this.handleClick(i, "teamB")}/>
+              </div>
+          </React.Fragment>
         );
       }
       
     return (
-      <Table hover>
-        <thead>
-          <tr>
-            <th className="head">team 1</th>
-            <th className="head">team 2</th>
-          </tr>
-        </thead>                
-        <tbody onClick={this.update}>
-          {rows}
-        </tbody>
-      </Table>
+      <div className="container">
+        <Card className="lobby-slot-card" onClick={this.update}>
+            {rows}
+        </Card>
+      </div>
+
     )
   }
 }

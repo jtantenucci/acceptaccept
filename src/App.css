@@ -198,17 +198,36 @@ button.btn.btn-primary:hover {
 
 
 /* styles for table */
-
-th.head {
-  border-top: 0px;
-  padding-left: 0px;
+div.lobby-slot-card.card {
+  border: 1px solid var(--tertiary);
+  background-color: var(--primary);
 }
 
-.table thead th{
-  border-bottom: 1px solid var(--tertiary);
+
+div.player-card-header.card-header {
+  border: 0px;
+  text-align: center;
+  
 }
 
-.head {
+div.row {
+  margin: 0px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h4.media-heading {
+  text-align: end;
+  color: var(--tertiary);
+  font-size: 20px;
+  font-weight: 100;
+  font-family: Helvetica;
+  font-style: italic;
+  text-shadow: 0.5px 0.5px 3px lightgrey;
+}
+
+h2.head {
   color: var(--tertiary);
   font-size: 25px;
   font-weight: 500;
@@ -216,6 +235,27 @@ th.head {
   font-family: Helvetica;
   font-style: italic;
   text-shadow: 0.5px 0.5px 3px lightgrey;
+}
+
+div.media-body {
+  height: 128px;
+  text-align: right;
+  justify-content: end;
+}
+
+button.player-ready-button.btn.btn-primary {
+  margin-top: 60px;
+
+}
+
+div.user.row {
+  height: 128px;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.table thead th{
+  border-bottom: 1px solid var(--tertiary);
 }
 
 th.user {
@@ -243,13 +283,8 @@ button.btn.btn-secondary:active {
   box-shadow: 0 0 0 0.2rem var(--secondary);
 }
 
-table.table.table-hover {
-  margin-bottom: 0px;
-}
-table {
-  table-layout: fixed;
-  width: 70%;
-}
+
+
 
 /* styles for main form */
 
@@ -289,18 +324,31 @@ button.btn.btn-shuffle.btn-secondary:hover {
   color: white;
 }
 
-button.btn.btn-launch.btn-secondary {
+a.btn.btn-launch.btn-secondary {
   text-align: center;
   background: #89859c;
   margin: 3px auto;
   border: 0px;
 }
 
-button.btn.btn-launch.btn-secondary:hover {
+h4.media-heading {
+  height:24px;
+}
+
+a.btn.btn-launch.btn-secondary:hover {
   background: #545161;
   color: white;
 }
 
+div.col-6.player-card-slot {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0.5px solid var(--tertiary);
+}
+
+div.row.lobby-players {
+  padding: 0px;
+}
 /* styles for mapvote modal */
 h5.modal-title {
   padding-left: 15px;

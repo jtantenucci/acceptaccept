@@ -1,5 +1,6 @@
 import React from 'react'
 import PlayerCard from './playercard';
+import { Card, Row, Col } from 'reactstrap';
 export class PlayerSlot extends React.Component {
 
     constructor(props) {
@@ -18,14 +19,12 @@ export class PlayerSlot extends React.Component {
     }
     render () {
         return (
-            <th onClick={this.handleClick} className="user">
-                <PlayerCard 
-                    onClick={this.setReady}
-                    src={this.props.img}
-                    active={this.props.ready}
-                    steamUser={this.props.steamUser}
-                />
-            </th>
+            <PlayerCard 
+                onClick={this.setReady}
+                src={this.props.img}
+                active={this.props.ready}
+                steamUser={this.props.steamUser}
+            />
         )
     }
 }
