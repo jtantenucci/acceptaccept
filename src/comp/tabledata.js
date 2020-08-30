@@ -106,7 +106,8 @@ export class TableData extends React.Component {
               <PlayerSlot gameid="0"
                       steamUser={this.state.teamA?.[i]?.username}
                       ready={this.state.teamA?.[i]?.isReady}
-                      setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
+                      setReady={this.readyUp}
+                      steamid={this.state.teamA?.[i]?.steamId}
                       img={this.state.teamA?.[i]?.avatar}
                       leave={this.leaveMatch}
                       handleClick={this.handleClick(i, "teamA")}/>
@@ -114,7 +115,8 @@ export class TableData extends React.Component {
                       steamUser={this.state.teamB?.[i]?.username}
                       ready={this.state.teamB?.[i]?.isReady}
                       leave={this.leaveMatch}
-                      setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
+                      steamid={this.state.teamB?.[i]?.steamId}
+                      setReady={this.readyUp}
                       img={this.state.teamB?.[i]?.avatar}
                       handleClick={this.handleClick(i, "teamB")}/>              </div>
           </React.Fragment>

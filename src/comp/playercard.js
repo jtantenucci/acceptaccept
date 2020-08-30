@@ -2,7 +2,17 @@ import React from 'react';
 import { Button, Card, CardBody, Row, CardHeader, Col, Media, ButtonGroup } from 'reactstrap';
 
 
-function PlayerCard({steamUser, src, onClick, active, handleClick, leave}) {
+function PlayerCard({steamUser, src, onClick, active, handleClick, leave, id}) {
+    const isClient = id == localStorage.getItem('steamId');
+    let buttons;
+    console.log("playercard iD: " + id);
+    if(isClient)
+        buttons =(<ButtonGroup>
+                    <Button className="player-ready-button" color="primary" onClick={onClick} active={active}>ready</Button>
+                    <Button className="player-leave-button" color="primary" onClick={leave}>leave</Button>
+                </ButtonGroup>);
+    else
+        buttons = null;
     return (
         <div className="col-6 player-card-slot" onClick={handleClick}>
             <Media>
@@ -13,10 +23,7 @@ function PlayerCard({steamUser, src, onClick, active, handleClick, leave}) {
                     <Media heading className="">
                         {steamUser}
                     </Media>
-                <ButtonGroup>
-                    <Button className="player-ready-button" color="primary" onClick={onClick} active={active}>ready</Button>    
-                    <Button className="player-leave-button" color="primary" onClick={leave}>leave</Button>
-                </ButtonGroup>
+                  {buttons}
                 </Media>
             </Media>
         </div>
