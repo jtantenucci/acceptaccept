@@ -1,6 +1,5 @@
 import React from 'react'
 import PlayerCard from './playercard';
-import { Card, Row, Col } from 'reactstrap';
 export class PlayerSlot extends React.Component {
 
     constructor(props) {
@@ -17,6 +16,7 @@ export class PlayerSlot extends React.Component {
     render () {
         return (
             <PlayerCard 
+                handleClick={this.handleClick}
                 leave={this.leave}
                 onClick={this.setReady}
                 src={this.props.img}

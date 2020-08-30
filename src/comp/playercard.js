@@ -2,10 +2,11 @@ import React from 'react';
 import { Button, Card, CardBody, Row, CardHeader, Col, Media, ButtonGroup } from 'reactstrap';
 
 
-function PlayerCard({steamUser, src, onClick, active, leave}) {
+function PlayerCard({steamUser, src, onClick, active, handleClick, leave}) {
     return (
         <div className="col-6 player-card-slot">
             <Media>
+                {handleClick}
                 <Media left>
                     <Media object className="rounded" width="128px" height="128px" src={src} alt="join"/>
                 </Media>
