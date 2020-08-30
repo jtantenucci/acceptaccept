@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'reactstrap';
 import { PlayerSlot } from './playerslot'
-import {getGameById, postGameByIdTeamA, postGameByIdTeamB, postGameByIdReady} from '../Api'
+import {getGameById, postGameByIdTeamA, postGameByIdTeamB, postGameByIdReady, deleteGameById} from '../Api'
 import {w3cwebsocket as W3CWebSocket} from "websocket"
 import qs from "qs"
 import { withRouter } from 'react-router-dom';
@@ -24,18 +24,23 @@ export class TableData extends React.Component {
        this.clientid = localStorage.getItem('steamid');
      });
     }
-
-   componentWillMount() {
-    const client = new W3CWebSocket("ws://queue.boner1.com/ws/game/0/sub")
-    client.onopen = () => {
-      console.log("subscribed!")
+    websocketconn = () =>
+    {
+      const client = new W3CWebSocket("ws://queue.boner1.com/ws/game/0/sub")
+      client.onclose = x => {
+          console.log('lost connection... retrying');
+          setTimeout(this.websocketconn, 1000);
+      };
+      client.onopen = () => {
+        console.log("subscribed!")
+      }
+      client.onmessage = (message) => {
+        let data = JSON.parse(message.data);
+        this.setState({teamA: data.teamA, teamB: data.teamB});
     }
-    client.onmessage = (message) => {
-      console.log(message.data);
-      let data = JSON.parse(message.data);
-      console.log(data);
-      this.setState({teamA: data.teamA, teamB: data.teamB});
-  }
+    }
+   componentWillMount() {
+     this.websocketconn();
   }
     update = () => {
       getGameById(this.gameid).then(game => {
@@ -82,6 +87,15 @@ export class TableData extends React.Component {
       });
     });
   }
+  leaveMatch = (e) => {
+    e.stopPropagation();
+    deleteGameById(0, {id: this.clientid}).then(game => {
+      this.setState({
+        teamA: game.data.teamA,
+        teamB: game.data.teamB
+      });
+    })
+  }
    render () {
     var rows = []
     for (var i = 0; i < 5; i++) {
@@ -89,19 +103,20 @@ export class TableData extends React.Component {
         rows.push(
           <React.Fragment>
               <div className="row lobby-players">
-                <PlayerSlot gameid="0"
-                              steamUser={this.state.teamA?.[i]?.username}
-                              ready={this.state.teamA?.[i]?.isReady}
-                              setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
-                              img={this.state.teamA?.[i]?.avatar}
-                              handleClick={this.handleClick(i, "teamA")}/>
-                  <PlayerSlot gameid="0"
-                                steamUser={this.state.teamB?.[i]?.username}
-                                ready={this.state.teamB?.[i]?.isReady}
-                                setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
-                                img={this.state.teamB?.[i]?.avatar}
-                                handleClick={this.handleClick(i, "teamB")}/>
-              </div>
+              <PlayerSlot gameid="0"
+                      steamUser={this.state.teamA?.[i]?.username}
+                      ready={this.state.teamA?.[i]?.isReady}
+                      setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
+                      img={this.state.teamA?.[i]?.avatar}
+                      leave={this.leaveMatch}
+                      handleClick={this.handleClick(i, "teamA")}/>
+              <PlayerSlot gameid="0"
+                      steamUser={this.state.teamB?.[i]?.username}
+                      ready={this.state.teamB?.[i]?.isReady}
+                      leave={this.leaveMatch}
+                      setReady={(this.clientid === this.state.teamA?.[i]?.steamid) && this.readyUp}
+                      img={this.state.teamB?.[i]?.avatar}
+                      handleClick={this.handleClick(i, "teamB")}/>              </div>
           </React.Fragment>
         );
       }

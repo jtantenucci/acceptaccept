@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card, CardBody, Row, CardHeader, Col, Media } from 'reactstrap';
 
 
-function PlayerCard({steamUser, src, onClick, active}) {
+function PlayerCard({steamUser, src, onClick, active, leave}) {
     return (
         <div className="col-6 player-card-slot">
             <Media>
@@ -12,11 +12,20 @@ function PlayerCard({steamUser, src, onClick, active}) {
                 <Media body>
                     <Media heading className="">
                         {steamUser}
+<<<<<<< HEAD
                     </Media>
                     <Button className="player-ready-button" color="primary" onClick={onClick} active={active}>ready</Button>    
                 </Media>
             </Media>
         </div>
+=======
+                    </CardHeader>
+                    <Button color="primary" onClick={onClick} active={active}>ready</Button>
+                    <Button color="secondary" onClick={leave}>leave</Button>
+                </CardBody>
+            </Card>
+        </CardGroup>
+>>>>>>> a6c5e7227cf8b80df15e68e371a8eec48ddbb7f7
     );
 }
 

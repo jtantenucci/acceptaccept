@@ -11,20 +11,29 @@ export class PlayerSlot extends React.Component {
         if (this.props.setReady)
             this.setReady = this.props.setReady.bind(this);
         this.isClient = this.props.isClient;
-        this.state = {
-            steamUser : this.props.steamUser,
-            img : this.props.img,
-            ready : this.props.ready
-        }
+        if (this.props.leave)
+            this.leave = this.props.leave.bind(this)
     }
     render () {
         return (
+<<<<<<< HEAD
             <PlayerCard 
                 onClick={this.setReady}
                 src={this.props.img}
                 active={this.props.ready}
                 steamUser={this.props.steamUser}
             />
+=======
+            <th onClick={this.handleClick} className="user">
+                <PlayerCard
+                  leave={this.leave}
+                    onClick={this.setReady}
+                    src={this.props.img}
+                    active={this.props.ready}
+                    steamUser={this.props.steamUser}
+                />
+            </th>
+>>>>>>> a6c5e7227cf8b80df15e68e371a8eec48ddbb7f7
         )
     }
 }
