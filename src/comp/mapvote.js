@@ -47,10 +47,12 @@ class MapVoteModal extends Component {
         } else {
             console.log( this.state.selected + ' submitted');
             let id = localStorage.getItem('steamid');
-                postGameByIdVoteMap(0, [id, {getName: this.state.selected}]).then(console.log("VOTED :)"));
+            console.log("Id" + id);
+            postGameByIdVoteMap(0, [id, {getName: this.state.selected}]).then(console.log("VOTED :)"));
                 this.setState({
                     isModalOpen: !this.state.isModalOpen
                 });
+            event.preventDefault();
         }
     }
 
