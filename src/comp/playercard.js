@@ -3,7 +3,7 @@ import { Button, Card, CardBody, Row, CardHeader, Col, Media, ButtonGroup } from
 
 
 function PlayerCard({steamUser, src, onClick, active, handleClick, leave, id}) {
-    const isClient = id == localStorage.getItem('steamId');
+    const isClient = id == localStorage.getItem('steamid');
     let buttons;
     console.log("playercard iD: " + id);
     if(isClient)
