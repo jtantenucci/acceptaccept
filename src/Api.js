@@ -44,8 +44,8 @@ export var postGameByIdUndecided = function(id, body)
 
 export var deleteGameById = function(id, body)
 {
-  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + ''
-    , method: 'delete'
+  return axios({ url: 'http://queue.boner1.com/api/game/' + encodeURIComponent(id) + '/exit'
+    , method: 'post'
     , data: body
     , responseType: 'json'
     });

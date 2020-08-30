@@ -10,17 +10,15 @@ export class PlayerSlot extends React.Component {
         if (this.props.setReady)
             this.setReady = this.props.setReady.bind(this);
         this.isClient = this.props.isClient;
-        this.state = {
-            steamUser : this.props.steamUser,
-            img : this.props.img,
-            ready : this.props.ready
-        }
+        if (this.props.leave)
+            this.leave = this.props.leave.bind(this)
     }
     render () {
         return (
             <th onClick={this.handleClick} className="user">
-              <img src={this.props.img} alt="dead game"/> {this.props.steamUser}
-              <Button color="primary" onClick={this.setReady} active={this.props.ready}>ready</Button>
+            <Button color="secondary" onClick={this.leave}>leave</Button>
+            <img src={this.props.img} alt="dead game"/> {this.props.steamUser}
+            <Button color="primary" onClick={this.setReady} active={this.props.ready}>ready</Button>
             </th>
         )
     }
