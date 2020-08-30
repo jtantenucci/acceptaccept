@@ -16,24 +16,13 @@ export class PlayerSlot extends React.Component {
     }
     render () {
         return (
-<<<<<<< HEAD
             <PlayerCard 
+                leave={this.leave}
                 onClick={this.setReady}
                 src={this.props.img}
                 active={this.props.ready}
                 steamUser={this.props.steamUser}
             />
-=======
-            <th onClick={this.handleClick} className="user">
-                <PlayerCard
-                  leave={this.leave}
-                    onClick={this.setReady}
-                    src={this.props.img}
-                    active={this.props.ready}
-                    steamUser={this.props.steamUser}
-                />
-            </th>
->>>>>>> a6c5e7227cf8b80df15e68e371a8eec48ddbb7f7
         )
     }
 }
