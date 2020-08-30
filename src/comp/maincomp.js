@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './headercomp';
 import MatchLobby from './matchlobby';
 import Footer from './footercomp';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 import qs from 'qs'
 
@@ -28,6 +28,7 @@ class Main extends Component {
                     <Route path="/matchlobby">
                         <MatchLobby  />
                     </Route>
+                    <Redirect to ="/home" />
                 </Switch>
                 <Footer />
           </Router>

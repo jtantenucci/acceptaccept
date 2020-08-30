@@ -18,12 +18,12 @@ const ButtonData = () => {
         <ButtonGroup vertical size="md">
             <Button className="btn btn-shuffle" onClick={voteForShuffle}>
                 <span>
-                    <i>{shuffle} Shuffle Teams</i>
+                    <i>{shuffle} shuffle teams</i>
                 </span>
             </Button>
-            <Button className="btn btn-launch">
+            <Button href="steam://connect/csgo.boner1.com/gamers" className="btn btn-launch">
                 <span>
-                    <i>{launch} Launch Server</i>
+                    <i>{launch} launch server</i>
                 </span>
             </Button>
         </ButtonGroup>

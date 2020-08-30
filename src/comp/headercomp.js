@@ -30,6 +30,11 @@ class Header extends Component {
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav className="mr-auto" navbar>
                             <NavItem>
+                                <NavLink className="nav-link" to="/home">
+                                    <span className="fa fa-globe fa-lg"></span> home
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <NavLink className="nav-link" to="/matchlobby">
                                     <span className="fa fa-server fa-lg"></span> match lobby
                                 </NavLink>
@@ -38,11 +43,6 @@ class Header extends Component {
                                 <a className="nav-link" href="http://cs.moderan.org:5123/leaderboard">
                                     <span className="fa fa-bar-chart fa-lg"></span> stats
                                 </a>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="nav-link" to="/home">
-                                    <span className="fa fa-globe fa-lg"></span> Home
-                                </NavLink>
                             </NavItem>
                             </Nav>
                             <Nav className="accept">
@@ -53,17 +53,6 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <Jumbotron className="banner">
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                                <h1 className="containerhead">accept accept !</h1>
-                                    <hr className="mt-0 mb-2"></hr>
-                                <p className="containertext">csgo server 10 man scrim lobby setup</p>
-                            </div>
-                        </div>
-                    </div>
-                </Jumbotron>
             </React.Fragment>
         );
     }

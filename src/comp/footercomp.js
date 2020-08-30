@@ -11,9 +11,10 @@ function Footer() {
                         <div className="text-left">
                         <h5>links</h5>
                         <ul className="list-unstyled">
-                            <li><Link to="/home" className="footerh5">Home</Link></li>
-                            <li><Link to="/matchlobby" className="footerh5">Match Lobby</Link></li>
-                            <li><Link to="/" className="footerh5">Stats</Link></li>
+                            <li><a href="https://discord.gg/BnuT9pH" className="footerh5">discord</a></li>
+                            <li><Link to="/matchlobby" className="footerh5">match lobby</Link></li>
+                            <li><a href="http://cs.moderan.org:5123/leaderboard" className="footerh5">stats</a></li>
+                            <li><a href="https://steamcommunity.com/groups/Boner1" className="footerh5">steam community</a></li>
                         </ul>
                         </div>
                     </div>
@@ -30,6 +31,8 @@ function Footer() {
                                     href="http://twitter.com/"><i className="fa fa-twitter"></i></a></li>
                                 <li><a className="btn btn-social-icon btn-google" 
                                     href="http://youtube.com/"><i className="fa fa-youtube"></i></a></li>
+                                <li><a className="btn btn-social-icon btn-twitter" 
+                                    href="https://steamcommunity.com/groups/Boner1"><i className="fa fa-steam"></i></a></li>
                             </ul>
                         </div>
                     </div>
