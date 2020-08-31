@@ -22,6 +22,7 @@ export class PlayerSlot extends React.Component {
                 src={this.props.img}
                 active={this.props.ready}
                 steamUser={this.props.steamUser}
+              id={this.props.steamid} // fixme
             />
         )
     }
