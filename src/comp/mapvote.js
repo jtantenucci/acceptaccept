@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalFooter, Form, Card, ModalBody, Alert } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalFooter, Form, Card, ModalBody } from 'reactstrap';
 import { MAPS } from '../shared/maps';
 import { postGameByIdVoteMap } from '../Api.js'
-import RenderMapCardHead from './rendermapcardhead';
-import RenderMapCardButtons from './rendermapcardbuttons';
-import RenderMapCardImage from './rendermapcardimage';
+import RenderMapCardHead from './mapvoting/rendermapcardhead';
+import RenderMapCardButtons from './mapvoting/rendermapcardbuttons';
+import RenderMapCardImage from './mapvoting/rendermapcardimage';
+import SuccessModal from './mapvoting/successmodal';
+import AlertModal from './mapvoting/alertmodal';
 
 
 class MapVoteModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isSuccessModalOpen: false,
             isModalOpen: false,
             isAlertModalOpen: false,
             maps: MAPS,
             selected: null,
         };
+        this.setSuccessModal = this.setSuccessModal.bind(this);
         this.setAlertModal = this.setAlertModal.bind(this);
         this.setModal = this.setModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,6 +28,12 @@ class MapVoteModal extends Component {
     setModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+    setSuccessModal() {
+        this.setState({
+            isSuccessModalOpen: !this.state.isSuccessModalOpen
         });
     }
 
@@ -50,7 +60,8 @@ class MapVoteModal extends Component {
             console.log("Id" + id);
             postGameByIdVoteMap(0, [id, {getName: this.state.selected}]).then(console.log("VOTED :)"));
                 this.setState({
-                    isModalOpen: !this.state.isModalOpen
+                    isModalOpen: !this.state.isModalOpen,
+                    isSuccessModalOpen: !this.state.isSuccessModalOpen
                 });
             event.preventDefault();
         }
@@ -60,7 +71,7 @@ class MapVoteModal extends Component {
         const selectedKey = this.state.selected;
         const maps = this.state.maps.map((maps) => {
             return (
-                <div key={maps.id} className="col-4 map-vote">
+                <div key={maps.id} className="col-sm-6 col-lg-4 col-xl-3 map-vote">
                     <Card className="mapvote">
                         <RenderMapCardHead maps={maps} />   
                         <RenderMapCardImage maps={maps} />
@@ -83,30 +94,28 @@ class MapVoteModal extends Component {
                         <ModalBody>
                             <div className="container">
                             <p className="modal-vote-text">select a map to vote from:</p>
-                                <div className="row">
+                                <div className="row row-vote-cards">
                                     {maps}
                                 </div>
                             </div>
                         </ModalBody>
                         <ModalFooter>
                             <Button type="submit" submit={this.state.selected} color="secondary"><span className="fa fa-paper-plane-o fa-lg"></span> vote</Button>{' '}
-                                <Modal isOpen={this.state.isAlertModalOpen} toggle={this.setAlertModal}>
-                                    <ModalHeader>
-                                        alert :(
-                                    </ModalHeader>
-                                    <ModalBody>
-                                        <Alert className="error-alert" color="danger">
-                                            please select a map before submitting
-                                        </Alert>
-                                    </ModalBody>
-                                    <ModalFooter>
-                                        <Button className="button-cancel-vote" onClick={this.setAlertModal} >okay</Button>
-                                    </ModalFooter>
-                                </Modal>
+                                <AlertModal 
+                                    isOpen={this.state.isAlertModalOpen}
+                                    toggle={this.setAlertModal}
+                                    onClick={this.setAlertModal}
+                                />
                             <Button className="button-cancel-vote" onClick={this.setModal} >cancel</Button>
                         </ModalFooter>
                     </Form>
-                </Modal> 
+                </Modal>
+                <SuccessModal 
+                    isOpen={this.state.isSuccessModalOpen}
+                    toggle={this.setSuccessModal}
+                    selected={this.state.selected}
+                    onClick={this.setSuccessModal} >                            
+                </SuccessModal>
             </div>
         );
     }

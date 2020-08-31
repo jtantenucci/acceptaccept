@@ -8,6 +8,7 @@
 
 body {
   background-color: #ad9cad;
+  padding-right: 0px !important;
 }
 
 div.homepage-jumbotron.jumbotron {
@@ -413,18 +414,29 @@ button.btn.btn-primary:active {
 
 /* styles for mapvote cards */
 
+div.row.row-vote-cards {
+  padding: 0px;
+}
+
+p.modal-vote-text {
+  padding-left: 5px;
+}
+
+div.modal-vote-head.modal-header {
+  padding-left: 20px;
+}
 
 div.card {
   background: var(--primary);
   border-top: 0px;
-  margin: 3px;
+  margin: 2px;
 }
 
-div.col-4.map-vote {
+div.col-sm-6.col-lg-4.col-xl-3.map-vote {
   padding: 0px;
 }
 div.card-body {
-  align-items: stretch;
+  align-items: normal;
   padding-bottom: 10px;
   padding-top: 0px;
 }
@@ -436,7 +448,7 @@ img.card-img-top {
 div.card-header {
   color: var(--tertiary);
   padding: 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
   font-family: Helvetica;
   font-style: italic;
@@ -463,6 +475,23 @@ button.button-cancel-vote.btn.btn-secondary {
   border-color: var(--secondary);
 }
 
+.light-alert {
+  background-color: var(--primary);
+  border: 1px solid #89859c;
+  box-shadow: 0.5px 0.5px 5px rgb(243, 210, 235);
+  font-family: Helvetica;
+  font-style: italic;
+  color: white;
+}
+
+.error-alert {
+  background-color: var(--primary);
+  border: 1px solid #89859c;
+  box-shadow: 0.5px 0.5px 5px rgb(243, 210, 235);
+  font-family: Helvetica;
+  font-style: italic;
+  color: white;
+}
 
 /* styles for footer */
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'reactstrap';
-import { PlayerSlot } from './playerslot'
+import { PlayerSlot } from './playerlobby/playerslot'
 import {getGameById, postGameByIdTeamA, postGameByIdTeamB, postGameByIdReady, deleteGameById} from '../Api'
 import {w3cwebsocket as W3CWebSocket} from "websocket"
 import qs from "qs"

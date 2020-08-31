@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LoginModal from './loginform';
-import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse, Jumbotron } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
