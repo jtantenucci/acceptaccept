@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardBody, Row, CardHeader, Col, Media, ButtonGroup } from 'reactstrap';
+import { Button, Media, ButtonGroup, ButtonToggle } from 'reactstrap';
 
 
 function PlayerCard({steamUser, src, onClick, active, handleClick, leave}) {
@@ -15,7 +15,7 @@ function PlayerCard({steamUser, src, onClick, active, handleClick, leave}) {
                         {steamUser}
                     </Media>
                 <ButtonGroup>
-                    <Button className="player-ready-button" color="primary" onClick={onClick} active={active}>ready</Button>    
+                    <ButtonToggle className="player-ready-button" color="primary" onClick={onClick} active={active}>ready</ButtonToggle>    
                     <Button className="player-leave-button" color="primary" onClick={leave}>leave</Button>
                 </ButtonGroup>
                 </Media>
