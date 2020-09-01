@@ -3,7 +3,7 @@ import { Card } from 'reactstrap';
 import { PlayerSlot } from './playerlobby/playerslot'
 import {getGameById, postGameByIdTeamA, postGameByIdTeamB, postGameByIdReady, deleteGameById} from '../Api'
 import {w3cwebsocket as W3CWebSocket} from "websocket"
-import qs from "qs"
+
 import { withRouter } from 'react-router-dom';
 /* global BigInt */
 export class TableData extends React.Component {
@@ -12,7 +12,8 @@ export class TableData extends React.Component {
         super(props);
         this.state = {
             teamA: null,
-            teamB: null
+            teamB: null,
+            isActive: false,
         };
 
       this.gameid = 0;
@@ -83,7 +84,7 @@ export class TableData extends React.Component {
     postGameByIdReady(0, {id:this.clientid}).then(game => {
       this.setState({
         teamA: game.data.teamA,
-        teamB: game.data.teamB
+        teamB: game.data.teamB,
       });
     });
   }
@@ -92,7 +93,7 @@ export class TableData extends React.Component {
     deleteGameById(0, {id: this.clientid}).then(game => {
       this.setState({
         teamA: game.data.teamA,
-        teamB: game.data.teamB
+        teamB: game.data.teamB,
       });
     })
   }

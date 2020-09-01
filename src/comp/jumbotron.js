@@ -10,7 +10,7 @@ class AcceptJumbotron extends Component {
                         <div className="col-12 col-sm-6">
                             <h1 className="containerhead">accept accept !</h1>
                                 <hr className="mt-0 mb-2"></hr>
-                            <p className="containertext">csgo server 10 man scrim lobby setup</p>
+                            <p className="containertext">cs:go server 10 man scrim lobby setup</p>
                         </div>
                     </div>
                 </div>

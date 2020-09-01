@@ -11,19 +11,21 @@ body {
   padding-right: 0px !important;
 }
 
+
 div.homepage-jumbotron.jumbotron {
   padding-top: 100px;
   padding-bottom: 457px;
   background-size: cover;
+  font-family: Helvetica;
   background-repeat: no-repeat;
-  background-position-y: 80%;
-  background-image: url(https://cdn.discordapp.com/attachments/727729652134707201/727819137316814887/image0.jpg)
+  background-position-y: 50%;
+  background-image: url(https://media.discordapp.net/attachments/737753359611854887/745443180811386944/mob.png?width=1075&height=605);
 }
 
-.homebutton {
+button.homebutton.btn.btn-secondary {
   margin-top: 8px;
   text-align: center;
-  background: #89859c;
+  background-color: var(--primary);
   border: 0px;
   font-style: italic;
 }
@@ -133,6 +135,8 @@ h5.modal-title {
 div.modal-body {
   background-color: #ad9cad;
   color: white;
+  font-style: italic;
+  font-family: Helvetica;
   max-width: 1280px;
 }
 
@@ -170,7 +174,7 @@ a.steam-login-button.btn.btn-secondary {
 }
 
 a.steam-login-button.btn.btn-secondary:hover {
-  background: #8675a3;
+  background: #ad9cad;
   color: white;
 }
 
@@ -181,7 +185,7 @@ button.btn.btn-secondary {
 }
 
 button.btn.btn-secondary:hover {
-  background: #8675a3;
+  background: #ad9cad;
   color: white;
 }
 
@@ -246,7 +250,7 @@ div.media-body {
 
 button.player-ready-button.btn.btn-primary {
   margin-top: 60px;
-
+  outline: 0px;
 }
 
 button.player-ready-button.btn.btn-primary:focus {
@@ -254,21 +258,26 @@ button.player-ready-button.btn.btn-primary:focus {
   background-color: var(--secondary);
   box-shadow: 0.5px 0.5px 5px rgb(243, 210, 235);
   text-shadow: 0.5px 0.5px 5px rgb(255, 243, 243);
+  outline: 0px;
 }
 
 button.player-leave-button.btn.btn-primary {
   margin-top: 60px;
+  outline: 0px;
 
 }
-
+button.player-ready-button.btn.btn-secondary.btn-block:hover {
+  background: #ad9cad;
+}
 button.player-ready-button.btn.btn-primary:hover {
   margin-top: 60px;
-  background: #8675a3;
+  background: #ad9cad;
 }
 
 button.player-leave-button.btn.btn-primary:hover {
   margin-top: 60px;
-  background: #8675a3;
+  background: #ad9cad;
+  outline: 0px;
 }
 
 div.user.row {
@@ -384,8 +393,16 @@ h5.modal-title {
   font-style: italic;
 }
 
+button.button-cancel-vote.btn.btn-secondary:hover {
+  background-color: var(--secondary);
+  color: #545161;
+}
+
 button.button-cancel-vote.btn.btn-secondary {
-  background-color: #f8d7da;
+  background-color: #89859c;
+  border-color: var(--secondary);
+  color: #ffffff;
+
 }
 
 .modal-vote-text {
@@ -407,7 +424,13 @@ button.btn.btn-primary:hover {
   background: #545161;
   color: white;
 } 
-
+button.button-map-modal.btn.btn-secondary:hover {
+  background: #545161;
+  color: white;
+}
+button.button-vote.btn.btn-secondary:hover {
+  background: #ad9cad;
+}
 button.btn.btn-primary:active {
   background: var(--primary);
 }
@@ -457,23 +480,30 @@ div.card-header {
 
 
 
-.button-vote.btn-block.btn.btn-secondary.btn-sm {
-  border-color: var(--tertiary);
-  
-}
 
-
-.button-vote.btn-block.btn.btn-secondary.btn-sm:focus {
+.btn-secondary:not(:disabled):not(.disabled).active {
   background-color: var(--secondary);
   background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--primary);
+  outline: var(--secondary);
   box-shadow: 0.5px 0.5px 5px rgb(243, 210, 235);
-  text-shadow: 0.5px 0.5px 5px rgb(255, 243, 243);
+  text-shadow: 0.5px 0.5px 5px rgb(223, 182, 212);
 }
 
-button.button-cancel-vote.btn.btn-secondary {
+.btn-secondary:not(:disabled):not(.disabled).active:focus {
   background-color: var(--secondary);
+  background: var(--secondary);
   border-color: var(--secondary);
+  color: var(--primary);
+  outline: var(--secondary);
+  box-shadow: 0.5px 0.5px 5px rgb(243, 210, 235);
+  text-shadow: 0.5px 0.5px 5px rgb(223, 182, 212);
 }
+
+
+
+
 
 .light-alert {
   background-color: var(--primary);

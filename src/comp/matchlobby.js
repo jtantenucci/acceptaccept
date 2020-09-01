@@ -11,6 +11,9 @@ class MatchLobby extends Component {
                 <AcceptJumbotron />
                 <div className="container">
                     <div className="row">
+                        
+                    </div>
+                    <div className="row">
                         <div className="col-sm-6">
                             <h2 className="head">team 1</h2>
                         </div>

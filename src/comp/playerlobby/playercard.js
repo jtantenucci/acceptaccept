@@ -13,12 +13,19 @@ function PlayerCard({steamUser, src, onClick, active, handleClick, leave, id}) {
                 </ButtonGroup>);
     else
         buttons = null;
+    let media;
+    if(steamUser)
+        media =(<Media left>
+                    <Media object className="rounded" width="128px" height="128px" src={src} />
+                </Media>);
+    else
+        media = (<Button block className="align-self-center player-ready-button" onClick={handleClick}>join slot</Button>
+        );
+        
     return (
         <div className="col-6 player-card-slot" onClick={handleClick}>
             <Media>
-                <Media left>
-                    <Media object className="rounded" width="128px" height="128px" src={src} alt="join"/>
-                </Media>
+                {media}
                 <Media body>
                     <Media heading className="">
                         {steamUser}

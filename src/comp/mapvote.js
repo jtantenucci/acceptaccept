@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalFooter, Form, Card, ModalBody } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalFooter, Form, Card, ModalBody, Alert } from 'reactstrap';
 import { MAPS } from '../shared/maps';
 import { postGameByIdVoteMap } from '../Api.js'
 import RenderMapCardHead from './mapvoting/rendermapcardhead';
@@ -14,20 +14,30 @@ class MapVoteModal extends Component {
         super(props);
         this.state = {
             isSuccessModalOpen: false,
+            isActive: false,
             isModalOpen: false,
+            isAlertMapVoteOpen: false,
             isAlertModalOpen: false,
             maps: MAPS,
             selected: null,
         };
+        this.setActive = this.setActive.bind(this);
         this.setSuccessModal = this.setSuccessModal.bind(this);
         this.setAlertModal = this.setAlertModal.bind(this);
         this.setModal = this.setModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.setAlertMapVote = this.setAlertMapVote.bind(this);
     }
 
     setModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+    setAlertMapVote() {
+        this.setState({
+            isAlertMapVoteOpen: !this.state.isAlertMapVoteOpen
         });
     }
 
@@ -40,6 +50,12 @@ class MapVoteModal extends Component {
     setAlertModal() {
         this.setState({
             isAlertModalOpen: !this.state.isAlertModalOpen
+        });
+    }
+
+    setActive() {
+        this.setState({
+            isActive: !this.state.isActive
         });
     }
 
@@ -61,7 +77,8 @@ class MapVoteModal extends Component {
             postGameByIdVoteMap(0, [id, {getName: this.state.selected}]).then(console.log("VOTED :)"));
                 this.setState({
                     isModalOpen: !this.state.isModalOpen,
-                    isSuccessModalOpen: !this.state.isSuccessModalOpen
+                    isSuccessModalOpen: !this.state.isSuccessModalOpen,
+                    isAlertMapVoteOpen: !this.state.isAlertMapVoteOpen
                 });
             event.preventDefault();
         }
@@ -75,8 +92,9 @@ class MapVoteModal extends Component {
                     <Card className="mapvote">
                         <RenderMapCardHead maps={maps} />   
                         <RenderMapCardImage maps={maps} />
-                        <RenderMapCardButtons maps={maps}                    
-                            active={selectedKey === maps.name} 
+                        <RenderMapCardButtons maps={maps}
+                            active={this.setActive}                    
+                            selected={selectedKey === maps.name} 
                             onChange={evt => this.onChange(maps.name, evt)} />
                     </Card>
                 </div>
@@ -85,7 +103,10 @@ class MapVoteModal extends Component {
 
         return(
             <div>
-                <Button className="button-vote" onClick={this.setModal}>map</Button>
+                <Alert isOpen={this.state.isAlertMapVoteOpen}>
+                    current vote count: 
+                </Alert>
+                <Button className="button-map-modal" onClick={this.setModal}>map</Button>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.setModal} size="xl">
                     <ModalHeader className="modal-vote-head" toggle={this.setModal}>
                         <i className="fa fa-map-o fa-md"></i> map select

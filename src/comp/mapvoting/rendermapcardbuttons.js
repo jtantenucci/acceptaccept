@@ -9,7 +9,6 @@ const RenderMapCardButtons = ({ maps, selected, onChange }) => {
                             size="sm"
                             className="button-vote btn-block"
                             id={maps.key}  
-                            checked={selected}
                             active={selected} 
                             value={maps.key} 
                             onClick={onChange}
