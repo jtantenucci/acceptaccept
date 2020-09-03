@@ -16,11 +16,11 @@ class MatchLobby extends Component {
 
       this.gameid = 0;
       this.update = this.update.bind(this);
+      this.clientid = localStorage.getItem('steamid');
       getGameById(this.gameid).then(res => {
         console.log("initial load");
         console.log(res);
-        this.setState({queue: res.data})
-       this.clientid = localStorage.getItem('steamid');
+        this.setState({queue: res.data});
      });
     }
     websocketconn = () =>
@@ -90,6 +90,11 @@ class MatchLobby extends Component {
     })
   }
     render () {
+        let forceShuf = null;
+        if(this.clientid == this.state?.queue?.leader) {
+            console.log(this.clientid)
+            console.log(this.state?.queue?.leader)
+        }
         return (
             <div>
                 <AcceptJumbotron />
