@@ -12,18 +12,34 @@ export class TableData extends React.Component {
    render () {
     var rows = []
     for (var i = 0; i < 5; i++) {
+      var classNameA = 'playerslot'
+      var classNameB = 'playerslot'
+      if(this.props.queue?.teamA?.[i]?.ready)
+      {
+        console.log('this player ready');
+        classNameA += ' active'
+      }
+      if(this.props.queue?.teamB?.[i]?.ready)
+      {
+        console.log('this player ready');
+        classNameB += ' active'
+      }
+
+
         rows.push(
           <React.Fragment>
               <div className="row lobby-players">
               <PlayerSlot gameid="0"
                           user={this.props.queue?.teamA?.[i]}
                           setReady={this.props.readyUp}
-                          leave={this.props.leaveMatch}
+                          leave={this.props.leave}
+                          className={classNameA}
                           handleClick={this.props.handleClick(i, "teamA")}/>
               <PlayerSlot gameid="0"
                           user={this.props.queue?.teamB?.[i]}
-                          leave={this.props.leaveMatch}
+                          leave={this.props.leave}
                           setReady={this.props.readyUp}
+                          className={classNameB}
                           handleClick={this.props.handleClick(i, "teamB")}/>              </div>
           </React.Fragment>
         );

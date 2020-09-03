@@ -20,6 +20,7 @@ export class PlayerSlot extends React.Component {
                 leave={this.leave}
                 ready={this.setReady}
                 user={this.props.user}
+            className={this.props.className}
             />
         )
     }

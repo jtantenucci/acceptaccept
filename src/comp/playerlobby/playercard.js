@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Media, ButtonGroup, ButtonToggle } from 'reactstrap';
 
 
-function PlayerCard({user, ready, handleClick, leave}) {
+function PlayerCard({user, ready, handleClick, leave, className}) {
     const isClient = user?.steamId == localStorage.getItem('steamid');
     let buttons;
     if(isClient)
@@ -30,8 +30,9 @@ function PlayerCard({user, ready, handleClick, leave}) {
         media = (<Button block className="align-self-center player-ready-button" onClick={handleClick}>join slot</Button>
         );
         
+    var className = "col-6 player-card-slot " + className;
     return (
-        <div className="col-6 player-card-slot" onClick={handleClick}>
+        <div className={className} onClick={handleClick}>
             <Media>
                 {media}
                 <Media body>
