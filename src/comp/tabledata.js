@@ -11,9 +11,8 @@ export class TableData extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            teamA: null,
-            teamB: null,
             isActive: false,
+            queue: null
         };
 
       this.gameid = 0;
@@ -21,7 +20,7 @@ export class TableData extends React.Component {
       getGameById(this.gameid).then(res => {
         console.log("initial load");
         console.log(res);
-       this.setState({teamA: res.data.teamA, teamB: res.data.teamB})
+        this.setState({queue: res.data})
        this.clientid = localStorage.getItem('steamid');
      });
     }
@@ -37,7 +36,7 @@ export class TableData extends React.Component {
       }
       client.onmessage = (message) => {
         let data = JSON.parse(message.data);
-        this.setState({teamA: data.teamA, teamB: data.teamB});
+        this.setState({queue: data});
     }
     }
    componentWillMount() {
@@ -45,9 +44,7 @@ export class TableData extends React.Component {
   }
     update = () => {
       getGameById(this.gameid).then(game => {
-        let teamA = game.data.teamA;
-        let teamB = game.data.teamB;
-        this.setState({teamA: teamA, teamB: teamB});
+        this.setState({queue: game.data});
       });
     }
     
@@ -59,8 +56,7 @@ export class TableData extends React.Component {
             postGameByIdTeamA(this.gameid, [i, this.clientid])
               .then(game => {
                 this.setState({
-                  teamA: game.data.teamA,
-                  teamB: game.data.teamB
+                  queue: game.data
                 });
               })
               .catch(err => console.log(err))
@@ -69,8 +65,7 @@ export class TableData extends React.Component {
             postGameByIdTeamB(this.gameid, [i, this.clientid])
               .then(game => {
                 this.setState({
-                  teamA: game.data.teamA,
-                  teamB: game.data.teamB
+                  queue: game.data
                 });
               })
               .catch(err => console.log(err))
@@ -83,8 +78,7 @@ export class TableData extends React.Component {
     e.stopPropagation();
     postGameByIdReady(0, {id:this.clientid}).then(game => {
       this.setState({
-        teamA: game.data.teamA,
-        teamB: game.data.teamB,
+        queue: game.data
       });
     });
   }
@@ -92,34 +86,26 @@ export class TableData extends React.Component {
     e.stopPropagation();
     deleteGameById(0, {id: this.clientid}).then(game => {
       this.setState({
-        teamA: game.data.teamA,
-        teamB: game.data.teamB,
+        queue: game.data
       });
     })
   }
    render () {
     var rows = []
     for (var i = 0; i < 5; i++) {
-
         rows.push(
           <React.Fragment>
               <div className="row lobby-players">
               <PlayerSlot gameid="0"
-                      steamUser={this.state.teamA?.[i]?.username}
-                      ready={this.state.teamA?.[i]?.isReady}
-                      setReady={this.readyUp}
-                      steamid={this.state.teamA?.[i]?.steamId}
-                      img={this.state.teamA?.[i]?.avatar}
-                      leave={this.leaveMatch}
-                      handleClick={this.handleClick(i, "teamA")}/>
+                          user={this.state.queue?.teamA?.[i]}
+                          setReady={this.readyUp}
+                          leave={this.leaveMatch}
+                          handleClick={this.handleClick(i, "teamA")}/>
               <PlayerSlot gameid="0"
-                      steamUser={this.state.teamB?.[i]?.username}
-                      ready={this.state.teamB?.[i]?.isReady}
-                      leave={this.leaveMatch}
-                      steamid={this.state.teamB?.[i]?.steamId}
-                      setReady={this.readyUp}
-                      img={this.state.teamB?.[i]?.avatar}
-                      handleClick={this.handleClick(i, "teamB")}/>              </div>
+                          user={this.state.queue?.teamB?.[i]}
+                          leave={this.leaveMatch}
+                          setReady={this.readyUp}
+                          handleClick={this.handleClick(i, "teamB")}/>              </div>
           </React.Fragment>
         );
       }

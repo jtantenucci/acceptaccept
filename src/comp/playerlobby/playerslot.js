@@ -18,11 +18,8 @@ export class PlayerSlot extends React.Component {
             <PlayerCard 
                 handleClick={this.handleClick}
                 leave={this.leave}
-                onClick={this.setReady}
-                src={this.props.img}
-                active={this.props.ready}
-                steamUser={this.props.steamUser}
-              id={this.props.steamid} // fixme
+                ready={this.setReady}
+                user={this.props.user}
             />
         )
     }

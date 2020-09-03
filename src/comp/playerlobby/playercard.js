@@ -2,21 +2,29 @@ import React from 'react';
 import { Button, Media, ButtonGroup, ButtonToggle } from 'reactstrap';
 
 
-function PlayerCard({steamUser, src, onClick, active, handleClick, leave, id}) {
-    const isClient = id == localStorage.getItem('steamid');
+function PlayerCard({user, ready, handleClick, leave}) {
+    const isClient = user?.steamId == localStorage.getItem('steamid');
     let buttons;
-    console.log("playercard iD: " + id);
     if(isClient)
         buttons =(<ButtonGroup>
-                    <ButtonToggle className="player-ready-button" color="primary" onClick={onClick} active={active}>ready</ButtonToggle>
-                    <Button className="player-leave-button" color="primary" onClick={leave}>leave</Button>
+                    <ButtonToggle className="player-ready-button"
+                                  color="primary"
+                                  onClick={ready}
+                                  >
+                      ready
+                    </ButtonToggle>
+                    <Button className="player-leave-button"
+                            color="primary"
+                            onClick={leave}>
+                      leave
+                    </Button>
                 </ButtonGroup>);
     else
         buttons = null;
     let media;
-    if(steamUser)
+    if(user?.steamId)
         media =(<Media left>
-                    <Media object className="rounded" width="128px" height="128px" src={src} />
+                <Media object className="rounded" width="128px" height="128px" src={user.avatar} />
                 </Media>);
     else
         media = (<Button block className="align-self-center player-ready-button" onClick={handleClick}>join slot</Button>
@@ -28,7 +36,7 @@ function PlayerCard({steamUser, src, onClick, active, handleClick, leave, id}) {
                 {media}
                 <Media body>
                     <Media heading className="">
-                        {steamUser}
+        {user?.username}
                     </Media>
                     {buttons}
                 </Media>
