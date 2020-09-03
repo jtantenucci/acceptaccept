@@ -7,9 +7,17 @@ class Header extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            isNavOpen: false
+            isNavOpen: false,
+            isLoginModalOpen: false,
         };
+        this.toggleLoginModal = this.toggleLoginModal.bind(this);
         this.toggleNav = this.toggleNav.bind(this);
+    }
+
+    toggleLoginModal() {
+        this.setState({
+            isLoginModalOpen: !this.state.isLoginModalOpen
+        });
     }
 
     toggleNav() {
@@ -47,7 +55,10 @@ class Header extends Component {
                             </Nav>
                             <Nav className="accept">
                                 <NavItem>
-                                    <LoginModal />
+                                    <LoginModal
+                                        isOpen={this.state.isLoginModalOpen}
+                                        toggleLoginModal={this.toggleLoginModal}
+                                    />
                                 </NavItem>
                             </Nav>
                         </Collapse>
