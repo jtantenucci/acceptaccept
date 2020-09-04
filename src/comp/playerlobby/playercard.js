@@ -6,8 +6,9 @@ function PlayerCard({user, ready, handleClick, leave, className}) {
     const isClient = user?.steamId == localStorage.getItem('steamid');
     let buttons;
     if(isClient)
-        buttons =(<ButtonGroup>
-                    <ButtonToggle className="player-ready-button"
+        buttons =(
+                <ButtonGroup>
+                    <ButtonToggle className={className}
                                   color="primary"
                                   onClick={ready}
                                   >
@@ -29,7 +30,7 @@ function PlayerCard({user, ready, handleClick, leave, className}) {
     else
         media = (<Button block className="align-self-center player-ready-button" onClick={handleClick}>join slot</Button>
         );
-        
+
     var className = "col-6 player-card-slot " + className;
     return (
         <div className={className} onClick={handleClick}>
@@ -37,7 +38,7 @@ function PlayerCard({user, ready, handleClick, leave, className}) {
                 {media}
                 <Media body>
                     <Media heading className="">
-        {user?.username}
+                        {user?.username}
                     </Media>
                     {buttons}
                 </Media>

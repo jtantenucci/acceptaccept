@@ -77,7 +77,7 @@ class MatchLobby extends Component {
     e.stopPropagation();
     postGameByIdReady(0, {id:this.clientid}).then(game => {
       this.setState({
-        queue: game.data
+        queue: game.data,
       });
     });
   }
