@@ -52,6 +52,13 @@ export var deleteGameById = function(id, body)
 }
 
 
+export var getSteamuserById = function(id)
+{
+  return axios({ url: 'http://queue.boner1.com/api/steam/' + encodeURIComponent(id),
+                 method: 'get',
+                 responseType: 'json'}
+              );
+}
 
 export var postGameByIdVoteMap = function(id, body)
 {
