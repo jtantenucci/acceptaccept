@@ -9,6 +9,7 @@
 body {
   background-color: #ad9cad;
   padding-right: 0px !important;
+  font-family: 'HelveticaWorld';
 }
 
 
@@ -16,7 +17,7 @@ div.homepage-jumbotron.jumbotron {
   padding-top: 100px;
   padding-bottom: 457px;
   background-size: cover;
-  font-family: Helvetica;
+
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-image: url(https://media.discordapp.net/attachments/737753359611854887/745443180811386944/mob.png?width=1075&height=605);
@@ -37,7 +38,7 @@ button.homebutton.btn.btn-secondary {
 }
 
 a { 
-  font-family: Helvetica;
+ 
   font-style: italic;
   color: var(--tertiary);
   
@@ -53,8 +54,10 @@ div.col-12.col-sm-6 {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  font-family: Helvetica;
+  
   font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   color: var(--tertiary);
 }
 
@@ -75,14 +78,14 @@ div.col-12.col-sm-6 {
 
 .containerhead {
   letter-spacing: 1.5px;
-  font-family: Helvetica;
+
   font-style: italic;
   font-weight: bold;
 }
 
 .containertext {
   text-align: right;
-  font-family: Helvetica;
+
   font-style: italic;
   letter-spacing: 1.5px;
 }
@@ -93,7 +96,7 @@ div.col-12.col-sm-6 {
   margin: 0px auto;
   background-color: #ad9cad;
   font-style: italic;
-  font-family: Helvetica;
+
   color: floralwhite;
   text-shadow: 0.5px 0.5px 5px rgb(245, 142, 221);
 }
@@ -116,7 +119,7 @@ hr{
 
 div.modal-header {
   background: var(--primary);
-  font-family: Helvetica;
+
   font-style: italic;
   font-weight: bolder;
   color: white;
@@ -127,7 +130,7 @@ h5.modal-title {
   color: var(--tertiary);
   font-size: 20px;
   font-weight: 100;
-  font-family: Helvetica;
+
   font-style: italic;
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
@@ -136,7 +139,7 @@ div.modal-body {
   background-color: #ad9cad;
   color: white;
   font-style: italic;
-  font-family: Helvetica;
+
   max-width: 1280px;
 }
 
@@ -227,7 +230,7 @@ h4.media-heading {
   color: var(--tertiary);
   font-size: 20px;
   font-weight: 100;
-  font-family: Helvetica;
+
   font-style: italic;
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
@@ -237,7 +240,7 @@ h2.head {
   font-size: 25px;
   font-weight: 500;
   text-align: left;
-  font-family: Helvetica;
+
   font-style: italic;
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
@@ -311,7 +314,7 @@ th.user {
 button.btn.btn-secondary {
   border-color: var(--tertiary);
   font-style: italic;
-  font-family: Helvetica;
+
 }
 
 button.btn.btn-secondary:hover {
@@ -333,7 +336,7 @@ label {
   color: var(--tertiary);
   font-size: 25px;
   font-weight: 100;
-  font-family: Helvetica;
+
   font-style: italic;
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
@@ -407,7 +410,7 @@ h5.modal-title {
 .error-alert {
   color: var(--tertiary);
   font-weight: 100;
-  font-family: Helvetica;
+
   font-style: italic;
 }
 
@@ -426,7 +429,7 @@ button.button-cancel-vote.btn.btn-secondary {
 .modal-vote-text {
   color: var(--tertiary);
   font-weight: 100;
-  font-family: Helvetica;
+
   font-style: italic;
 }
 
@@ -491,7 +494,7 @@ div.card-header {
   padding: 10px;
   font-size: 18px;
   font-weight: 100;
-  font-family: Helvetica;
+
   font-style: italic;
   text-shadow: 0.5px 0.5px 3px lightgrey;
 }
@@ -527,7 +530,7 @@ div.card-header {
   background-color: var(--primary);
   border: 1px solid #89859c;
   box-shadow: 0.5px 0.5px 5px rgb(243, 210, 235);
-  font-family: Helvetica;
+
   font-style: italic;
   color: white;
 }
@@ -536,7 +539,7 @@ div.card-header {
   background-color: var(--primary);
   border: 1px solid #89859c;
   box-shadow: 0.5px 0.5px 5px rgb(243, 210, 235);
-  font-family: Helvetica;
+
   font-style: italic;
   color: white;
 }
@@ -546,7 +549,7 @@ div.card-header {
 .footer {
   background-color: var(--primary);
   color: var(--tertiary);
-  font-family: Helvetica;
+
   font-weight: normal;
   margin-top: 0px;
   padding: 20px 0px 20px 0px;
@@ -556,7 +559,7 @@ div.card-header {
 a.footerh5 {
   color: white;
   letter-spacing: 1.5px;
-  font-family: Helvetica;
+
   font-style: italic;
   font-weight: lighter;
 }
