@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Media } from 'reactstrap';
+import { getSteamuserById } from '../Api';
 
 
-function LoginModal ({ id, isOpen, toggleLoginModal }) {
-    const isLoggedIn = id = localStorage.getItem('steamid');
+function LoginModal ({ isOpen, toggleLoginModal }) {
     let renderlogin;
     if(isLoggedIn)
-        renderlogin =(<Media heading className=""> hello {id} :) </Media>);
+        renderlogin =(<Media heading className=""> hello {isLoggedIn} :) </Media>);
 
     else
         renderlogin =(<Button onClick={toggleLoginModal}><span className="fa fa-steam fa-lg"></span> log in with steam</Button>)

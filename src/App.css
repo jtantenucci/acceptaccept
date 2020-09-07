@@ -37,6 +37,19 @@ button.homebutton.btn.btn-secondary {
   background-color: var(--primary);
 }
 
+h4.username.media-heading {
+  margin-bottom: 16px;
+}
+
+ul.accept.nav {
+  padding: 6px;
+}
+img.header-img {
+  width: 40px;
+  margin-right: 5px;
+  outline: 1px solid var(--tertiary);  
+}
+
 a { 
  
   font-style: italic;
