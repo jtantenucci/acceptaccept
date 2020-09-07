@@ -420,6 +420,12 @@ h5.modal-title {
   padding-left: 15px;
 }
 
+div.alert.alert-success.fade.show {
+  background-color: var(--primary);
+  color: var(--tertiary);
+  border: 1px solid var(--tertiary);
+  margin-bottom: 3px;
+}
 .error-alert {
   color: var(--tertiary);
   font-weight: 100;
@@ -449,6 +455,26 @@ button.button-cancel-vote.btn.btn-secondary {
 .modal-body {
   flex: 0 0;
 }
+ul.list-group {
+  border: 1px solid var(--tertiary);
+}
+.list-of-maps {
+  background-color: var(--primary);
+  color: var(--tertiary);
+}
+
+div.col.vote {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.badge-vote {
+  background-color: #89859c;
+}
+
+div.col.shuffle {
+  padding-right: 0px;
+}
 
 .modal-content {
   flex: 0 0;
@@ -462,6 +488,14 @@ button.button-map-modal.btn.btn-secondary:hover {
   background: #545161;
   color: white;
 }
+
+button.button-map-modal.btn.btn-secondary {
+  text-align: center;
+  background: #89859c;
+  border: 0px;
+  margin-top: 10px;
+}
+
 button.button-vote.btn.btn-secondary:hover {
   background: #ad9cad;
 }

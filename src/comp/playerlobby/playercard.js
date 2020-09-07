@@ -37,7 +37,7 @@ function PlayerCard({user, ready, handleClick, leave, className}) {
             <Media>
                 {media}
                 <Media body>
-                    <Media heading className="">
+                    <Media heading className="display sm-0">
                         {user?.username}
                     </Media>
                     {buttons}
