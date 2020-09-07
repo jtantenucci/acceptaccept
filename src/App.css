@@ -269,7 +269,8 @@ button.playerslot.btn.btn-primary {
   outline: 0px;
 }
 
-button.playerslot.active.btn.btn-primary {
+button.playerslot.active.btn.btn-primary, 
+button.playerslot.active.btn.btn-primary:focus {
   margin-top: 60px;
   color: var(--primary);
   background-color: var(--secondary);
@@ -485,7 +486,7 @@ button.btn.btn-primary:hover {
   color: white;
 } 
 button.button-map-modal.btn.btn-secondary:hover {
-  background: #545161;
+  background: #ad9cad;
   color: white;
 }
 
