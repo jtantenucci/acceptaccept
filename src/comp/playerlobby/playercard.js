@@ -3,9 +3,8 @@ import { Button, Media, ButtonGroup, ButtonToggle } from 'reactstrap';
 
 
 function PlayerCard({user, ready, handleClick, leave, className}) {
-    const isClient = user?.steamId == localStorage.getItem('steamid');
     let buttons;
-    if(isClient)
+    if(user?.steamId)
         buttons =(
                 <ButtonGroup>
                     <ButtonToggle className={className}

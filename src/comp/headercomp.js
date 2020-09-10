@@ -25,7 +25,7 @@ class Header extends Component {
         });
     }
 
-
+//76561198988277534
     toggleLoginModal() {
         this.setState({
             isLoginModalOpen: !this.state.isLoginModalOpen
@@ -40,7 +40,8 @@ class Header extends Component {
 
     render() {
         
-        function LoginModal ({ isOpen, toggleLoginModal }) {
+        function LoginModal ({ id, isOpen, toggleLoginModal }) {
+            const isLoggedIn = id = localStorage.getItem('steamid');
             let renderlogin;
             if(isLoggedIn)
                 renderlogin =(<LoggedIn />);
