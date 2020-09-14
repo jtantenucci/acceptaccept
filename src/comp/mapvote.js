@@ -7,6 +7,7 @@ import RenderMapCardButtons from './mapvoting/rendermapcardbuttons';
 import RenderMapCardImage from './mapvoting/rendermapcardimage';
 import SuccessModal from './mapvoting/successmodal';
 import AlertModal from './mapvoting/alertmodal';
+import MapDisplay from './mapdisplay';
 
 
 class MapVoteModal extends Component {
@@ -20,6 +21,7 @@ class MapVoteModal extends Component {
             isAlertModalOpen: false,
             maps: MAPS,
             selected: null,
+            votes: null
         };
         this.setActive = this.setActive.bind(this);
         this.setSuccessModal = this.setSuccessModal.bind(this);
@@ -74,17 +76,24 @@ class MapVoteModal extends Component {
             console.log( this.state.selected + ' submitted');
             let id = localStorage.getItem('steamid');
             console.log("Id" + id);
-            postGameByIdVoteMap(0, [id, {getName: this.state.selected}]).then(console.log("VOTED :)"));
+            postGameByIdVoteMap(0, [id, {getName: this.state.selected}]).then(res => {
+                let votes = res.data.mapVotes.map((x) => [x[0].getName, x[1].length]);
+                votes.sort((a,b) => {return(
+                    b[1] - a[1] );
+                })
                 this.setState({
                     isModalOpen: !this.state.isModalOpen,
                     isSuccessModalOpen: !this.state.isSuccessModalOpen,
-                    isAlertMapVoteOpen: !this.state.isAlertMapVoteOpen
-                });
+                    votes: votes.slice(0,3) 
+                })});
             event.preventDefault();
         }
     }
 
+
+
     render() {
+        console.log(this.state.votes)
         const selectedKey = this.state.selected;
         const maps = this.state.maps.map((maps) => {
             return (
@@ -103,10 +112,11 @@ class MapVoteModal extends Component {
 
         return(
             <div>
-                <Alert isOpen={this.state.isAlertMapVoteOpen}>
-                    current vote count: 
+                <Alert isOpen={true}>
+                    <MapDisplay votes={this.state.votes} />
+                    <Button block className="button-map-modal" onClick={this.setModal}>click to vote</Button>
                 </Alert>
-                <Button className="button-map-modal" onClick={this.setModal}>map</Button>
+                
                 <Modal isOpen={this.state.isModalOpen} toggle={this.setModal} size="xl">
                     <ModalHeader className="modal-vote-head" toggle={this.setModal}>
                         <i className="fa fa-map-o fa-md"></i> map select

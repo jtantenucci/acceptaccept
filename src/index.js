@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-social/bootstrap-social.css';
 import 'reactstrap';
 import './index.css';
+import './fonts/HelveticaWorld-Regular.ttf';
 import App from './App';
 
 

@@ -102,7 +102,9 @@ class MatchLobby extends Component {
                 <AcceptJumbotron />
                 <div className="container">
                     <div className="row">
-                        
+                      <div className="col vote">
+                          <MapVoteModal />
+                      </div>
                     </div>
                     <div className="row">
                         <div className="col-sm-6">
@@ -120,9 +122,7 @@ class MatchLobby extends Component {
                     />
                     <br></br>
                     <div className="row row-buttons">
-                        <div className="col vote">
-                            <MapVoteModal />
-                        </div>
+
                         <div className="col shuffle">
                             <ButtonData />
                         </div>

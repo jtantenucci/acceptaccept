@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import LoginModal from './loginform';
-import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavbarToggler, Collapse, Media, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { getSteamuserById } from '../Api';
+import LoggedIn from './loggedin';
 
 class Header extends Component {
     constructor (props) {
@@ -10,10 +11,21 @@ class Header extends Component {
             isNavOpen: false,
             isLoginModalOpen: false,
         };
+        this.isLoggedIn = this.isLoggedIn.bind(this);
         this.toggleLoginModal = this.toggleLoginModal.bind(this);
         this.toggleNav = this.toggleNav.bind(this);
     }
 
+    isLoggedIn (){
+        getSteamuserById(this.clientid).then((res) => {
+            this.setState = {
+                img: res.data.avatar,
+                id: res.data.id
+            }
+        });
+    }
+
+//76561198988277534
     toggleLoginModal() {
         this.setState({
             isLoginModalOpen: !this.state.isLoginModalOpen
@@ -27,6 +39,34 @@ class Header extends Component {
     }
 
     render() {
+        
+        function LoginModal ({ id, isOpen, toggleLoginModal }) {
+            const isLoggedIn = id = localStorage.getItem('steamid');
+            let renderlogin;
+            if(isLoggedIn)
+                renderlogin =(<LoggedIn />);
+        
+            else
+                renderlogin =(<Button onClick={toggleLoginModal}><span className="fa fa-steam fa-lg"></span> log in with steam</Button>)
+        
+            return(
+                <div>
+                    {renderlogin}
+                    <Modal isOpen={isOpen} toggle={toggleLoginModal}>
+                        <ModalHeader toggle={toggleLoginModal}><span className="fa fa-steam fa-lg"></span> steam login</ModalHeader>
+                        <ModalBody>
+                            <p className="modaltext">log in to steam account and authenticate, then join an open lobby slot.</p>
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button className="steam-login-button" href="api/auth/openid"><span className="fa fa-steam fa-lg"></span> log in</Button>{' '}
+                            <Button className="button-cancel-vote" onClick={toggleLoginModal}>cancel</Button>
+                        </ModalFooter>
+                    </Modal> 
+                </div>
+            );
+        }
+        const userId = this.res
+        const isLoggedIn = this.isLoggedIn
         return (
             <React.Fragment>
                 <Navbar dark light expand="md">
@@ -56,6 +96,8 @@ class Header extends Component {
                             <Nav className="accept">
                                 <NavItem>
                                     <LoginModal
+                                        userId={userId}
+                                        isLoggedIn={isLoggedIn}
                                         isOpen={this.state.isLoginModalOpen}
                                         toggleLoginModal={this.toggleLoginModal}
                                     />
