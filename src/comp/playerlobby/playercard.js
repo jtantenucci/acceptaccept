@@ -6,7 +6,7 @@ function PlayerCard({user, ready, handleClick, leave, className, isCaptain, isLe
     const isClient = user?.steamId == localStorage.getItem('steamid');
     console.log("captain" + isCaptain)
     let buttons;
-    if(user?.steamId)
+    if(user?.steamId && isClient)
         buttons =(
                 <ButtonGroup>
                     <ButtonToggle className={className}
