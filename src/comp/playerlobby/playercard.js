@@ -21,7 +21,7 @@ function PlayerCard({user, ready, handleClick, leave, className, isCaptain, isLe
                       leave
                     </Button>
                 </ButtonGroup>);
-    else if (isLeader && user)
+    else if (isLeader && user?.steamId)
         buttons = (<ButtonGroup>
                    <Button className="player-leave-button"
                            color="primary"
