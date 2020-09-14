@@ -25,7 +25,7 @@ function PlayerCard({user, ready, handleClick, leave, className, isCaptain, isLe
         buttons = (<ButtonGroup>
                    <Button className="player-leave-button"
                            color="primary"
-                           onclick={leave}
+                           onClick={leave}
                    >
                    kick
                    </Button>
