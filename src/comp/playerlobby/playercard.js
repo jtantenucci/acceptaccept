@@ -17,7 +17,7 @@ function PlayerCard({user, ready, handleClick, leave, className, isCaptain, isLe
                     </ButtonToggle>
                     <Button className="player-leave-button"
                             color="primary"
-                            onClick={leave}>
+                            onClick={leave(user?.steamId)}>
                       leave
                     </Button>
                 </ButtonGroup>);
@@ -25,7 +25,7 @@ function PlayerCard({user, ready, handleClick, leave, className, isCaptain, isLe
         buttons = (<ButtonGroup>
                    <Button className="player-leave-button"
                            color="primary"
-                           onClick={leave}
+                           onClick={leave(user?.steamId)}
                    >
                    kick
                    </Button>
@@ -44,7 +44,7 @@ function PlayerCard({user, ready, handleClick, leave, className, isCaptain, isLe
 
     var className = "col-6 player-card-slot " + className;
     return (
-        <div className={className} onClick={handleClick}>
+        <div className={className}>
             <Media>
                 {media}
                 <Media body>

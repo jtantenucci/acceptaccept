@@ -83,7 +83,6 @@ class MatchLobby extends Component {
   }
   leaveMatch = (steamid) => (e) => {
     console.log("leave match :" + steamid)
-    console.log(e)
     e.stopPropagation();
     deleteGameById(0, {id: steamid}).then(game => {
       this.setState({

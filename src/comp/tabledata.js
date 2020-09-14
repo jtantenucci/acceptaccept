@@ -30,14 +30,14 @@ export class TableData extends React.Component {
               <PlayerSlot gameid="0"
                           user={this.props.queue?.teamA?.[i]}
                           setReady={this.props.readyUp}
-                          leave={this.props.leave(this.props.queue?.teamA?.[i]?.steamId.toString())}
+                          leave={this.props.leave}
                           isCaptain={(this.props.queue?.teamA?.[i]?.steamId == this.props.queue?.leader.steamId)}
                           className={classNameA}
                           isLeader={(this.clientid == this.props.queue?.leader.steamId)}
                           handleClick={this.props.handleClick(i, "teamA")}/>
               <PlayerSlot gameid="0"
                           user={this.props.queue?.teamB?.[i]}
-                          leave={this.props.leave(this.props.queue?.teamB?.[i]?.steamId.toString())}
+                          leave={this.props.leave}
                           isCaptain={(this.props.queue?.teamB?.[i]?.steamId == this.props.queue?.leader.steamId)}
                           setReady={this.props.readyUp}
                           className={classNameB}
