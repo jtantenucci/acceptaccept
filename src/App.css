@@ -396,6 +396,12 @@ div.col-6.player-card-slot.playerslot.active {
   border: 0.5px solid var(--tertiary);
 }
 
+.hat {
+  position: absolute;
+  bottom: 100px;
+  left: 60px;
+}
+
 div.row.lobby-players {
   padding: 0px;
 }

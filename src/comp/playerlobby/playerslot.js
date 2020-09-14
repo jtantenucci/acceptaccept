@@ -10,17 +10,17 @@ export class PlayerSlot extends React.Component {
         if (this.props.setReady)
             this.setReady = this.props.setReady.bind(this);
         this.isClient = this.props.isClient;
-        if (this.props.leave)
-            this.leave = this.props.leave.bind(this)
     }
     render () {
         return (
             <PlayerCard 
                 handleClick={this.handleClick}
-                leave={this.leave}
+              leave={this.props.leave}
                 ready={this.setReady}
                 user={this.props.user}
             className={this.props.className}
+            isCaptain={this.props.isCaptain}
+            isLeader={this.props.isLeader} // FIXME
             />
         )
     }
