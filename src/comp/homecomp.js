@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Jumbotron, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import { postGameByUser }
+import { Link} from 'react-router-dom';
+import { postGameNew } from '../Api.js';
+import { withRouter } from 'react-router'
 
-function Home() {
-    return(
+class Home extends Component {
+    constructor(props) {
+        super(props);
+    }
+    newLobby = () =>
+        {
+            let userid = localStorage.getItem('steamid')
+            postGameNew({id: userid}).then(res => {
+                this.props.history.push('/games/' + res.data)
+            });
+        }
+
+    render() {return(
         <div className="homepage">
             <Jumbotron fluid className="homepage-jumbotron">
                 <div className="container fluid homepage">
@@ -12,7 +24,7 @@ function Home() {
                     <p className="lead">cs:go custom server management tool</p>
                     <p className="lead">
                     <Link to="/matchlobby">
-                        <Button className="homebutton" onclick = >
+                      <Button className="homebutton" onClick={this.newLobby}>
                             start new lobby
                         </Button>
                     </Link>
@@ -21,6 +33,9 @@ function Home() {
             </Jumbotron>
         </div>
     );
+             }
 }
 
-export default Home;
+const HomeR = withRouter(Home)
+
+export default HomeR;
