@@ -1,6 +1,7 @@
 import React from 'react';
 import { Jumbotron, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { postGameByUser }
 
 function Home() {
     return(
@@ -11,8 +12,8 @@ function Home() {
                     <p className="lead">cs:go custom server management tool</p>
                     <p className="lead">
                     <Link to="/matchlobby">
-                        <Button className="homebutton">
-                            start lobby
+                        <Button className="homebutton" onclick = >
+                            start new lobby
                         </Button>
                     </Link>
                     </p>

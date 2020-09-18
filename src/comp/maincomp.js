@@ -25,8 +25,7 @@ class Main extends Component {
                     <Route path="/home">
                         <Home />
                     </Route>
-                    <Route path="/matchlobby">
-                        <MatchLobby  />
+                  <Route path="/games/:id" component={MatchLobby}>
                     </Route>
                     <Redirect to ="/home" />
                 </Switch>

@@ -14,7 +14,7 @@ class MatchLobby extends Component {
             queue: null
         };
 
-      this.gameid = 0;
+      this.gameid = this.props.match.params.id;
       this.update = this.update.bind(this);
       this.clientid = localStorage.getItem('steamid');
       getGameById(this.gameid).then(res => {
@@ -25,7 +25,7 @@ class MatchLobby extends Component {
     }
     websocketconn = () =>
     {
-      const client = new W3CWebSocket("ws://queue.boner1.com/ws/game/0/sub")
+      const client = new W3CWebSocket(`ws://queue.boner1.com/ws/game/${this.gameid}/sub`)
       client.onclose = x => {
           console.log('lost connection... retrying');
           setTimeout(this.websocketconn, 1000);
@@ -75,7 +75,7 @@ class MatchLobby extends Component {
     console.log(this.clientid);
     console.log(typeof this.clientid)
     e.stopPropagation();
-    postGameByIdReady(0, {id:this.clientid}).then(game => {
+    postGameByIdReady(this.gameid, {id:this.clientid}).then(game => {
       this.setState({
         queue: game.data,
       });
@@ -84,7 +84,7 @@ class MatchLobby extends Component {
   leaveMatch = (steamid) => (e) => {
     console.log("leave match :" + steamid)
     e.stopPropagation();
-    deleteGameById(0, {id: steamid}).then(game => {
+    deleteGameById(this.gameid, {id: steamid}).then(game => {
       this.setState({
         queue: game.data
       });
